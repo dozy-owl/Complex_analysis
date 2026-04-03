@@ -1,0 +1,89 @@
+\section{Лекция 8. Первообразная}
+\textbfit{Теорема} (Интегральная формула Коши)
+
+Пусть $f \in \mathcal{O} (D),\  G -$ ограниченная область, $\overline{G} \subset D, \ \partial G $
+ состоит из конечного числа кусочно-гладких непересекающихся Жордановых кривых, $a \in G$. Тогда $f(a) = \frac{1}{2\pi i} \oint_{\partial G^+} \frac{f(z)}{z-a} dz$
+
+\[\triangleright \ 1) \ a \in G \Rightarrow \exists r > 0: U_r(a) = \{z: |z-a| < r\}, \overline{U_r(a)} \subset G\]
+\[\text{Рассмотрим } G_r = G \setminus \overline{U_r(a)}\] 
+\[\ \frac{f(z)}{z-a} \in \mathcal{O}(G_r) \overset{\text{ИТК}}{\Rightarrow} \oint_{\partial G_r^+} \frac{f(z)}{z-a} dz = 0 = \oint_{\partial G^+}\frac{f(z)}{z-a}dz + \oint_{(|z-a|=r)^-} \frac{f(z)}{z-a}dz\] 
+\[\text{, т.е. } \oint_{\partial G^+} \frac{f(z)}{z-a}dz = \oint_{(|z-a|=r)^+} \frac{f(z)}{z-a}dz\]
+\[\text{Л.ч. не зависит от } r\]
+\[2) \text{ Хотим } \oint_{(|z-a|=r)^+}\frac{f(z)}{z-a}dz = 2\pi i f(a)\]
+\[\int_{|z-a|=r} \frac{1}{z-a}dz = \left|\begin{array}{ll}
+z-a=e^{it}r \\
+z = \Gamma(t) \\
+t \in [0, 2\pi i] \\
+\Gamma'(t) = rie^{it}    
+\end{array}\right| = \int_0^{2\pi} \frac{1}{r} e^{-it} rie^{it} dt = 2\pi i\]
+\[\left|\oint_{(|z-a|=r)^+}\right|\]
+\[\ldots \text{см. фото}\]
+
+\textbfit{Теорема} (о среднем)
+$f \in \mathcal{O}(D), a \in D, \overline{U_r(a)} \subset D,$ то $f(a) = \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{it})dt$
+\[\triangleright \ f(a) \overset{\text{ИФК}}{=} \frac{1}{2\pi i} \oint_{|z-a|=r} \frac{f(z)}{z-a} dz = \left|\begin{array}{ll}
+    z = a + re^{it} \\
+    z' = rie^{it}    
+\end{array}\right| = \frac{1}{2\pi i} \int \frac{f(a+re^{it})}{re^{it}}rie^{it} dt =\] 
+\[\frac{1}{2\pi} \int_0^{2\pi} f(a+re^{it})dt \ \blacktriangleleft\]
+
+\textbfit{Пр.}
+\[\oint_{\partial \triangle^+} \frac{1}{z} dz = \begin{cases}
+    0, \ 0\notin \overline{\triangle} \text{ треугольник с замыканием} \\
+    2\pi i f(a) = 2\pi i, \ 0 \in \triangle
+\end{cases}\]
+\[f(z) = 1, a = 0\in \overline{G} = \overline{\triangle}\]
+
+\subsection{Первообразная}
+\textbfit{Опр.} Первообразной $f$ в области $D$ называется $F \in \mathcal{O}(D): F' = f$
+
+\textbfit{Теорема} Пусть $F_1, F_2 -$ первообразные $f$ в области $D$. Тогда $F_1-F_2 \equiv  const$ в $D$.
+\[\triangleright \ \text{Рассмотрим } \Phi = F_1 - F_2, \Phi' \equiv 0 \text{ в } D. \ \frac{\partial \Phi}{\partial \overline{z}} \overset{\text{К-Р}}{=} 0, \ \frac{\partial \Phi}{\partial z} = 0 = \Phi'(z) \Rightarrow u_x = u_y = v_x = v_y = 0\]
+\[\text{Пусть } \exists a, d, \in D: \Phi(a) \neq \Phi(b) \Rightarrow \exists \Gamma(t) \text{ -- путь в $D$ от $a$ до $b, \ t \in [0, 1]$. } g(t) = \Phi(\Gamma(t)), g' =\] 
+\[=\Phi'(\Gamma(t)) \Gamma'(t) = \left(\begin{array}{ll}
+    u_x & u_y \\
+    v_x & v_y    
+\end{array}\right) \left(\begin{array}{ll}
+    x'(t) \\
+    y'(t)
+\end{array}\right) = 0\]
+\[\Rightarrow g \equiv const \Rightarrow \Phi(a) = \Phi(b) \text{ -- противоречие } \blacktriangleleft\]
+
+\textbfit{Формула} Ньютона-Лейбница. Пусть $f \in C(D), F -$ первообразная $f$ в $D, \ \Gamma:[a, b] \to D -$ кусочно-гладкий путь. $\int_\Gamma f(z) dz = F(\Gamma(b)) - F(\Gamma(a))$
+\[\triangleright \ \int_\Gamma f(z) dz = \int_a^b F'(z) \Gamma'(t) dt = \int_a^b (F(\Gamma(t)))' dt = F(\Gamma(t))\Big|_a^b \ \blacktriangleleft\]
+
+\textbfit{Пр.} $f(z) = \frac{1}{z^2}, \ f \in \mathcal{O} (\mathbb{C} \setminus \{0\})$
+\[\exists F = -\frac{1}{z} \in \mathcal{O} (\mathbb{C} \setminus \{0\}) \Rightarrow \int_{\partial \triangle} \frac{1}{z^2} dz = 0\]
+\[\nexists \text{ первообразной } f(z) = \frac{1}{z} \text{ в } \mathbb{C} \setminus \{0\} \text{, т.к. } \oint_{|z|=1} \frac{1}{z} dz = 2\pi i\]
+
+\textbfit{Теорема} (о существовании первообразной в круге)
+
+Пусть $F \in C(U_R (a))$ (непрерывна в круге с центром $a$) $\forall \overline{\triangle} \subset U_R(a) \ \int_{\partial \triangle} f(z) dz = 0$. Тогда у $f \ \exists$ первообразная в $U_R(a).$
+\[\triangleright \ F(z) = \int_{[a, z]} f(z) dz\]
+\[\text{Покажем, что } F'(z) = f(z)\]
+\[\frac{F(z+h) - F(z)}{h} - f(z) = \frac{1}{h} \left(\int_{[a, z+h]}f(\zeta) d\zeta - \int_{[a, z]} f(\zeta) d\zeta\right) - f(z) = (*)\]
+\[\oint_{\partial \triangle} f(\zeta) d\zeta = \int_{a, z} f(\zeta) d\zeta + \int_{[z, z+h]} - \int_{a, z+h}\]
+\[\left(\int_{[a, z+h]}f(\zeta) d\zeta - \int_{[a, z]} f(\zeta) d\zeta\right) = \int_{[z, z+ h]}f(\zeta)d\zeta\]
+\[(*) = \frac{1}{h} \int_{[z, z+h]}f(\zeta) d\zeta - f(z) = \frac{1}{h} \int_{[z, z+h]}f(\zeta) d\zeta - \frac{1}{h}\int_{[z, z+h]} f(z) d\zeta = \frac{1}{h} \int_{[z, z+h]}(f(\zeta) - f(z))d\zeta\]
+\[\left|\frac{F(z+h) - F(z)}{h} - f(z)\right| \leq \frac{1}{|h|} \sup_{\zeta \in [z, z+h]} |f(\zeta)-f(z)| \cdot |h| \underset{h\to 0}{\to} 0 \ \blacktriangleleft\]
+
+\textbfit{Сл.} $f \in \mathcal{O}(U_R(a)) \Rightarrow \ \exists F -$ первообразная $f$ в $U_R(a).$
+
+\textbfit{Теорема} (критерий существования первообразной в области)
+
+Пусть $f \in C(D).$ Тогда у $f$ в $D \ \exists$ первообразная $\Leftrightarrow \forall$ замкнутого пути $\Gamma:[a, b]\to D \ \oint_\Gamma f(z) dz = 0$
+\[\triangleright \ (\Rightarrow) \text{ т. Ньютона-Лейбница}\]
+\[(\Leftarrow) \text{ Заметим, что } \int_{\Gamma_1} f(z) dz = \int_{\Gamma_2} f(z) dz\]
+\[\Gamma_1, \Gamma_2 - \text{ пути от $a$ до $b$ в $D$. Т.к. путь } \Gamma_1 \cup \Gamma_2^- \text{ замкнут}\]
+\[\text{Зафиксируем $a \in D. \ \forall z$ положим } F(z) = \int_{\Gamma_{a, z}} f(z) dz \text{ по любому произвольному $\Gamma$ от $a$}\]
+\[\text{до. $z \ (\exists$ т.к. область связна). Покажем, что } F'(z) = f(z). \text{ Т.к. $D$ - область} \Rightarrow\]
+\[\Rightarrow \exists r > 0: \overline{U_r(z)} \subset D \Rightarrow \forall h: |h| < r \ z+ h\in D\]
+\[\frac{1}{h} (F(z+h) - F(z)) - f(z)\]
+\[F(z+h) = \int_{a, z+h}, \ F(z) = \int_{a, z}\]
+\[\text{Рассмотрим путь } \Gamma_{a, z+h} = \Gamma_{a, z} \cup [z, z+h] \ F(z+h) - F(z) = \int_{[z, z+h]}f(z) dz\]
+\[\text{Длаьше, как в пред теореме } \blacktriangleleft\]
+
+\textbfit{Сл.} Пусть $f \in \mathcal{O}(D), \ D - $ односвязная область. Тогда $\exists F -$ первообразная $f$ в $D$.
+\[\triangleright \ \text{Пусть $\Gamma -$замкнутый Жорданов путь в $D$, то $\Gamma$- граница $G: \overline{G} \subset D$}\]
+\[\text{По ИТК для односвязных областей } \oint_\Gamma f(z) = 0 \Rightarrow \text{ по критерию $\exists$ первообразная в $D$. } \blacktriangleleft\]
+

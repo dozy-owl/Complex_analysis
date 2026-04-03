@@ -1,0 +1,74 @@
+\section{Лекция 9. Формула Тейлора}
+Из курса матанализа известно и сразу выполняется:
+\[S - \sum_{i=1}^N z_n \underset{N\to \infty}{\to} 0\]
+\[f_n(z) \overset{K}{\rightrightarrows } f(z) \overset{def}{\Leftrightarrow} \sup_{z \in K} |f_n(z) - f(z)| \underset{n\to \infty}{\to} 0\]
+\[f_n(z) \in C(X) \ f_n \overset{X}{\rightrightarrows } \Rightarrow f \in C(X)\]
+\[\sum_{i=1}^\infty f_n(z), \ |f_n(z)| \leq b_n, \ \sum_{i=1}^\infty b_n < \infty \Rightarrow \sum_{i=1}^\infty f_n(z) \rightrightarrows\]
+\[f_n(t) \overset{[a, b]}{\rightrightarrows }  f(t), \ \int_a^b f_n(t) dt \to \int_a^b f(t) dt\]
+\textbfit{Утв.} Пусть $f_n:\gamma \to \mathbb{C}, \ f_n \in C(\gamma), \ \gamma-$ кусочно-гладкая, $f_n \overset{\gamma}{\rightrightarrows} f$. Тогда $\int_\gamma f_n(z) dz \to \int_\gamma f(z) dz$.
+\[\triangleright \ \Gamma:[a, b] \to \gamma \text{ -- параметр } \gamma\]
+\[\int_\gamma f_n(z) dz = \int_a^b f_n(\Gamma(t)) \Gamma'(t) dt\]
+\[f_n(\Gamma(t))\Gamma'(t) \rightrightarrows f(\Gamma(T))\Gamma(t)\]
+\[\underset{t \in [a, b]}{\sup} \left|(f_n(\Gamma(t))-f(\Gamma(t)))\Gamma'(t)\right| \leq \underset{t \in [a, b]}{\sup} |\Gamma'(t)|\cdot \underset{t \in [a, b]}{\sup} |f_n(\Gamma(t)) - f(\Gamma(t))| = \underset{t \in [a, b]}{\sup} |\Gamma'(t)|\times\]
+\[\times \underset{z \in \gamma}{\sup} |f_n(z) - f(z)| \to 0\]
+\[\int_\gamma f_n(z) dz = \int_a^b f_n(\Gamma(t)) \Gamma'(t) dt \to \int_a^b f(\Gamma(t))\Gamma'(t) dt = \int_\gamma f(z) dz \blacktriangleleft\]
+
+\textbfit{Теорема} Тейлора. 
+
+Пусть $f \in \mathcal{O}(D), U_R(a) \subset D$. Тогда $c_n = \frac{1}{2\pi i} \oint_{|\zeta - a|=r}\frac{f(\zeta)}{(\zeta-a)^{n+1}}d\zeta, 0<r<R$
+ не зависят от выбора $r$ и называются коэффициентами Тейлора. Ряд $\sum_{n=0}^\infty c_n(z-a)^n$ называется рядом Тейлора $f$ с центром в точке $a, \ \forall z \in U_R(a) \ f(z) = \sum_{n=0}^\infty c_n (z-a)^n$.
+\[\triangleright \ 1) \text{ Покажем, что $c_n$ tн зависят от $r$. } 0<r_1<r_2<R\]
+\[\text{Рассмотрим } G = \{z: r_1 <|z-a|<r_2\}, \ \frac{f(\zeta)}{(\zeta-a)^{n+1}} \in \mathcal{O}(D)\]
+\[\overline{G} \subset G_\epsilon = \{z : r_1-\epsilon < |z-a| < r_2 + \epsilon\}, \ \frac{f(\zeta)}{(\zeta-a)^{n+1}}\in \mathcal{O}(D)\]
+\[\overset{\text{ИТК}}{\Rightarrow} \oint_{\partial G^+}\frac{f(\zeta)}{(\zeta-a)^{n+1}}d\zeta = 0 = \oint_{(|\zeta-a|=r_2)^+} - \oint_{(|\zeta-a|=r_1)^+}\]
+\[2) \text{ фиксируем } z \in U_R(a), \text{ выберем } r: |z-a|<r<R\]
+\[\text{По ИФК } f(z) = \frac{1}{2\pi i} \oint_{(|zeta-a|=r)^+} \frac{f(\zeta)}{\zeta-z}d\zeta = \frac{1}{2\pi i} \oint_{(|zeta-a|=r)^+} f(\zeta) \frac{1}{\zeta -a - (z-a)} d\zeta =\] 
+\[=\left||zeta-a|>|z-a|\right| = \frac{1}{2\pi i} \oint_{|zeta-a|=r} \frac{f(\zeta)}{\zeta - a} \cdot \frac{1}{1-\frac{z-a}{\zeta-a}} d\zeta = \frac{1}{2\pi i} \oint_{|zeta-a|=r} \frac{f(\zeta)}{\zeta-a} \sum_{n=0}^\infty \frac{(z-a)^n}{(\zeta-a)^n}=\]
+\[= \frac{1}{2\pi i} \oint_{|zeta-a|=r} \left( \sum_{n=0}^\infty \frac{f(\zeta)}{(\zeta-a)^{n+1}} (z-a)^n d \zeta \right) = (*)\]
+\[\text{Хотим равномерную сходимость } \sum_{n=0}^\infty \frac{f(\zeta)}{(\zeta-a)^{n+1}}(z-a)^n \text{ на } |\zeta-a|=r\]
+\[\left|\frac{f(\zeta)}{(\zeta-a)^{n+1}}(z-a)^n\right| \leq |M = \sup f| \leq \frac{M |z-a|^n}{r^{n+1}}\]
+\[\frac{M}{r} \sum_{n=0}^\infty \left(\frac{|z-a|}{r}\right)^n < \infty\]
+\[(*) = \sum_{n=0}^\infty (z-a)^n \left(\frac{1}{2\pi i} \oint_{|zeta-a|=r} \frac{f(\zeta)}{(\zeta-a)^{n+1}}d\zeta\right)\]
+
+\textbfit{Сл.} Неравенство Коши для коэффициентов Тейлора
+
+В условиях предыдущей теоремы справедливо неравенство $|c_n| \leq \frac{M_r}{r^n}, \ M_r = \underset{|z-a|=r}{\sup} f(z)$.
+\[\triangleright \ |c_n| = \left|\frac{1}{2\pi i} \oint_{|\zeta-a|=r} \frac{f(\zeta)}{(\zeta-a)^{n+1}}d\zeta\right| \leq \frac{1}{2\pi} \cdot \frac{\underset{|\zeta-a|=r}{\sup}|f(\zeta)|}{r^{n+1}} \cdot 2\pi r \ \blacktriangleleft\]
+
+\textbfit{Теорема} Лиувилля
+
+Пусть $f \in \mathcal{O}(\mathbb{C}), \exists M > 0 : \forall z \in \mathbb{C} \ |f(z)| \leq M$. Тогда $f \equiv const$.
+\[\triangleright \ a = 0, \ f(z) = \sum_{n=0}^\infty c_n z^n \ \forall z \in \mathbb{C}\]
+\[\text{По нер-ву Коши } |c_n| \leq \frac{M_r}{r^n} \leq \frac{M}{r^n} \ \forall r > 0\]
+\[\frac{M}{r^n} \overset{r\to\infty}{\to}0 \text{ при } n > 0\]
+\[\Rightarrow c_n = 0 \ \forall n = 1, 2 \ldots \Rightarrow f(z) = c_0 \ \forall z \in \mathbb{C} \blacktriangleleft\]
+
+\textbfit{Опр.} Функция $f \in \mathcal{O}(\mathbb{C})$ называется целой.
+
+\textbfit{Теорема} Коши-Адамара
+
+Пусть есть ряд вида $\sum_{n=0}^\infty b_n (z-a)^n$. Назовём $R = \frac{1}{\overline{\lim_{n\to\infty}} \sqrt[n]{|b_n|}}$ (в т.ч. $\frac{1}{\infty} = 0, \frac{1}{0} = \infty$) радиусом сходимости степенного ряда.
+Тогда $\forall z \in U_R(a)$ ряд сходится, $\forall z : |z-a|>R$ ряд расходится. (док-во как в и для вещественных (там смотрим на модули))
+
+\textbfit{Пр.} 
+\[\sum_{n=1}^\infty \frac{z^n}{n^2}, \ R = 1, \left|\frac{z}{n^2}\right| = \left|\frac{1}{n^2}\right| \Rightarrow \text{ сходится } \forall z: |z| = 1\]
+\[\sum_{n=1}^\infty \frac{z^n}{n}, \ R = 1, \ z = 1 \text{ расходится}, \forall z \neq 1, |z|=1 \text{ сходится}\]
+\[\sum_{n=1}^\infty z^n, \ R = 1, \forall z : |z|=1 \text{ расходится}\]
+
+\textbfit{Теорема} Абеля
+
+$\sum_{n=0}^\infty b_n(z-a)^n -$ степенной ряд, $R - $ радиус сходимости. $K - $ компакт, $K \subset U_R(a)$. Тогда $\sum_{n=0}^\infty b_n(z-a)^n \overset{K}{\rightrightarrows}$ 
+\[\triangleright \ \forall \ 0<r<R \ \sum_{n=0}^\infty |b_n| r^n \text{ сходится}\]
+\[\sup_{z \in K} |z-a| = |z_a-a|, z_1 \in K \Rightarrow |z_a-a|=r < R\]
+\[\text{Тогда } b_n(z-a)^n \leq |b_n| r^n \ \forall z \in K \Rightarrow \text{ по пр. Вейерштрасса } \sum_{n=0}^\infty b_n(z-a)^n \overset{K}{\rightrightarrows} \ \blacktriangleleft\]
+
+\textbfit{Теорема} о единственности разложения в ряд Тейлора
+
+Пусть $f \in \mathcal{O}(U_R(a)), \ \forall z \in U_R(a) \ f(z) = \sum_{n=0}^\infty b_n(z-a)^n.$ Тогда $b_n=c_n.$
+% \[\triangleright c_n = \frac{1}{2\pi i} \oint_{|\zeta-a|=r} \frac{f(\zeta)}{(\zeta-a)^{n+1}}d\zeta = \frac{1}{2\pi} \oint_{|zeta-a|=r} \frac{1}{(\zeta-a)^{n+1} \left(\sum_{k=0}^\infty b_k(\zeta-a)^k\right) d\zeta =\]
+\[=\frac{1}{2\pi} \oint_{|zeta-a|=r} \left(\sum_{k=0}^\infty b_k(\zeta-a)^{k-n-1}\right) d\zeta = (*)\]
+\[R \text{ тот же, } |\zeta-a|=r \text{ компакт. Тогда по т. Абеля }\]
+\[(*) = \frac{1}{2\pi} \sum_{k=0}^\infty b_k \oint_{|zeta-a|=r} (\zeta-a)^{k-n-1}d\zeta = \begin{cases}
+    0, & k-n-1 \neq -1 \\
+    2\pi i, & k - n - 1 = -1
+\end{cases} = \frac{1}{2\pi} b_n \cdot 2\pi i = b_n \blacktriangleleft\]
