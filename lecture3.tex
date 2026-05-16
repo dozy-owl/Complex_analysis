@@ -2,13 +2,13 @@
 \section{Лекция 3. Условия Коши-Римана. Голоморфность}
 \subsection{Условие Коши-Римана}
 
-\textbfit{Теорема} (Коши-Римана) Пусть $f:U(z_0) \to \mathbb{C}. \ f - \mathbb{C}-$дифференцируема в $z_0 \Leftrightarrow \mathbb{R}-$диф-
+\textbfit{Теорема} (Коши-Римана) Пусть $f:U(z_0) \to \mathbb{C}. \ f \ \mathbb{C}-$дифференцируема в $z_0 \Leftrightarrow f \ \mathbb{R}-$диф-
 
 ференцируема в $z_0$ и выполнено условие Коши-Римана $\begin{cases}
     u_x = v_y \\
     u_y = -v_x
-\end{cases}$, т.е. $\frac{\delta f}{\delta \overline{z}}=0$
-\[\triangleright (\Rightarrow) f(z_0+\Delta z)-f(z_0)=f'(z_0)\Delta z +\overline{o}(\Delta z) = |f'(z_0)|\left(\begin{array}{ll}
+\end{cases}$, т.е. $\frac{\partial f}{\partial \overline{z}}=0$
+\[\triangleright \ (\Rightarrow) f(z_0+\Delta z)-f(z_0)=f'(z_0)\Delta z +\overline{o}(\Delta z) = |f'(z_0)|\left(\begin{array}{ll}
 \cos \phi & -\sin \phi \\
 \sin \phi & \cos \phi    
 \end{array}\right) \left(\begin{array}{ll}
@@ -16,8 +16,8 @@
  \Delta y   
 \end{array}\right) + \overline{o}(|\Delta z|)\]
 \[\Rightarrow u_x = |f'(z_0)|\cdot \cos \phi \ldots \Rightarrow \text{Коши-Римана выполнено, и $f \ \mathbb{R}-$дифференцируема}\]
-\[(\Leftarrow) f(z_0+\Delta z)-f(z_0) = \frac{\delta f}{\delta z} \Delta z + \frac{\delta f}{\delta z} \Delta \overline{z}+\overline{o}(\Delta z) = \frac{\delta f}{\delta z}\Delta z + \overline{o}(\Delta z) \Rightarrow\]
-\[\Rightarrow f \ \mathbb{C}-\text{дифференцируема и } f'(z_0) = \frac{\delta f}{\delta z}\Big|_{z_0} \blacktriangleleft\]
+\[(\Leftarrow) f(z_0+\Delta z)-f(z_0) = \frac{\partial f}{\partial z} \Delta z + \frac{\partial f}{\partial \overline{z}} \Delta \overline{z}+\overline{o}(\Delta z) = \frac{\partial f}{\partial z}\Delta z + \overline{o}(\Delta z) \Rightarrow\]
+\[\Rightarrow f \ \mathbb{C}-\text{дифференцируема и } f'(z_0) = \frac{\partial f}{\partial z}\Big|_{z_0} \blacktriangleleft\]
 
 \textbfit{Пр.} $f(z) = \overline{z} = x-iy$
 \[u(x, y) = x, \ v(x, y) = -y\]
@@ -25,20 +25,20 @@
     1 \neq -1 \\
     0 = 0
 \end{cases}\]
-\[\frac{\delta f}{\delta \overline{z}} = 1 \neq 0\]
+\[\frac{\partial f}{\partial \overline{z}} = 1 \neq 0\]
 \[\text{Условие Коши-Римана не выполнено, значит, не $\mathbb{C}-$дифференцируема.}\]
 \textbfit{Опр.} Пусть $\theta \in \mathbb{R}, \ f:U(z_0)\to\mathbb{C}$. Тогда производной по направлению $\theta$ называется $f'_\theta(z_0) = \lim_{\Delta z \to 0, \ \arg \Delta z = \theta} \frac{f(z_0+\Delta z)-f(z_0)}{\Delta z}$
 \[f'_0(z_0) = u_x +iv_x\]
 \[f'_{\frac{\pi}{2}} = -i(u_y+iv_y)\]
 \textbfit{Опр.} Пусть $f-\mathbb{R}-$дифференцируема. Тогда $f-\mathbb{C}-$дифференцируема в $z_0 \Leftrightarrow f'_\theta(z_0)$ не зависит от $\theta$.
 \[(\Rightarrow) \text{ очевидно}\]
-\[(\Leftarrow) \Delta f = \frac{\delta f}{\delta z}\Delta z. +\frac{\delta f}{\delta \overline{z}}\Delta \overline{z}+\overline{o}(\Delta z) = (1)\]
+\[(\Leftarrow) \Delta f = \frac{\partial f}{\partial z}\Delta z. +\frac{\partial f}{\partial \overline{z}}\Delta \overline{z}+\overline{o}(\Delta z) = (1)\]
 \[\arg \Delta z = \theta, \ \Delta z = te^{i\theta}\]
 \[\Delta \overline{z} = \Delta z e^{-2i\theta}\]
-\[(1) = \Delta z \left(\frac{\delta f}{\delta z} + e^{-2i\theta} \frac{\delta f}{\delta \overline{z}}\right)+\overline{o}(\Delta z)=\Delta z f'_\theta (z_0) +\overline{o}(\Delta z)\]
+\[(1) = \Delta z \left(\frac{\partial f}{\partial z} + e^{-2i\theta} \frac{\partial f}{\partial \overline{z}}\right)+\overline{o}(\Delta z)=\Delta z f'_\theta (z_0) +\overline{o}(\Delta z)\]
 \[\text{Но $f'_\theta$ не зависит от $\theta \Rightarrow f'_0=f''_\frac{\pi}{2}$}\]
-\[\frac{\delta f}{\delta z} + \frac{\delta f}{\delta \overline{z}}=\frac{\delta f}{\delta z} -\frac{\delta f}{\delta \overline{z}}\]
-\[\Rightarrow \frac{\delta f}{\delta \overline{z}} = 0 \text{, т.е. Коши-Римана.}\]
+\[\frac{\partial f}{\partial z} + \frac{\partial f}{\partial \overline{z}}=\frac{\partial f}{\partial z} -\frac{\partial f}{\partial \overline{z}}\]
+\[\Rightarrow \frac{\partial f}{\partial \overline{z}} = 0 \text{, т.е. Коши-Римана.}\]
 \textbfit{Пр.} 1) $z=x+iy$
 \[\left(\begin{array}{ll}
 1 & 0 \\
@@ -80,6 +80,7 @@ e^x \sin y & e^x \cos y
 \[g_1(w_0)=g_1(e^{z_0})=\frac{1}{f'(z_0)}=\frac{1}{e^{z_0}}=\frac{1}{w_0}\]
 \[g_i(w_0)=g_1(e^{z_0})=\frac{1}{f'(z_0+2i\pi k)}=\frac{1}{e^{z_0+2i\pi k}}=\frac{1}{w_0}\]
 
+\subsection{Голоморфность}
 \textbfit{Опр.} Пусть $f: U(z_0)\to \mathbb{C}. \ f$ называется голоморфной в точке $z_0$, если $\exists U_\epsilon(z_0)$, т.ч. $f-\mathbb{C}-$дифференцируема в $U_\epsilon(z_0)$.
 
 Если $f: D \to \mathbb{C}, \ D-$область, то говорят, что $f$ голоморфна в $D$, если она голоморфна в каждой точке $D$. Обозначение $f \in O(D)$

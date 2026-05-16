@@ -7,15 +7,15 @@
 \[(\Leftarrow) \text{ Пусть } \rho(z_n, z) \to 0, z \in \mathbb{C}\]
 \[(\xi_n, \eta_n, \zeta_n)\to(\xi, \eta, \zeta) \Rightarrow \zeta_n\to \zeta\]
 \[\zeta < 1 \Rightarrow \exists N: \forall n > N \ \zeta_n < R_0 < 1 \Rightarrow \exists R: \forall n > N \ |z_n| < R, |z| < R\]
-\[\rho(z_n, z) = \frac{|z_n-z|}{\sqrt{1+|z_n|^2}\sqrt{1+|z|^2}} \geq \frac{|z_n-z|}{1+R^2}, \ \text{т.к. } |z_n| \leq R, \ |z| \leq R\]
+\[0 \leftarrow \rho(z_n, z) = \frac{|z_n-z|}{\sqrt{1+|z_n|^2}\sqrt{1+|z|^2}} \geq \frac{|z_n-z|}{1+R^2}, \ \text{т.к. } |z_n| < R, \ |z| < R\]
 \[2) z = \infty \in \overline{\mathbb{C}}\]
 \[(\Rightarrow) \text{ Пусть } z_n \to z = \infty \text{ в } \overline{\mathbb{C}}\]
 \[\rho(z_n, z) = \frac{1}{\sqrt{1+|z_n|^2}} \to 0\]
-\[(\Leftarrow) \rho(z_n, \infty) \to 0 \Rightarrow \frac{1}{\sqrt{1+|z_n|^2}} \to 0 \Rightarrow \sqrt{1+|z_n|^2} \to \infty \Leftrightarrow |z_n| \to \infty \blacktriangleleft\]
+\[(\Leftarrow) \ \rho(z_n, \infty) \to 0 \Rightarrow \frac{1}{\sqrt{1+|z_n|^2}} \to 0 \Rightarrow \sqrt{1+|z_n|^2} \to \infty \Leftrightarrow |z_n| \to \infty \blacktriangleleft\]
 
 Говорят, что $\overline{\mathbb{C}}$ и $S$ -- \textit{компактификация} $\mathbb{C}$.
 
-\textbfit{Утв.} $z_n = x_n +iy_n, \ z=x+iy, \ z_n = r_n e^{i\phi_n}, \ z=re^{i\phi}, \ r_n>0, \ r>0$
+\textbfit{Утв.} $z_n = x_n +iy_n, \ z=x+iy, \ z_n = r_n e^{i\varphi_n}, \ z=re^{i\varphi}, \ r_n>0, \ r>0$
 
 1) $z_n \to z \Leftrightarrow \begin{cases}
 x_n \to x \\
@@ -24,28 +24,28 @@ y_n \to y
 
 2) $z_n \to 0 \Leftrightarrow r_n \to 0$ 
 
-3) $r_n \to r, \ \phi_n \to \phi \Rightarrow z_n \to z$
+3) $r_n \to r, \ \varphi_n \to \varphi \Rightarrow z_n \to z$
 
-4) $z_n \to z, \ z \neq 0 \Rightarrow r_n \to r, \ \exists \phi_n = \arg z_n, \ \exists \phi = \arg z: \phi_n \to \phi$
-\[\triangleright (1)-(2) \text{ очевидно}\]
-\[(3): \ z_n = r_n (\cos \phi_n + i\sin \phi_n)\] 
-\[x_n = r_n \cos \phi_n \to r\cos \phi, \ y_n = r_n \sin \phi_n \to r\sin \phi \overset{(1)}{\Rightarrow} z_n \to z\]
-\[(4): |z_n-z|\to 0, \ ||z_n-|z|| \leq |z_n-z|\to 0\]
+4) $z_n \to z, \ z \neq 0 \Rightarrow r_n \to r, \ \exists \varphi_n = \arg z_n, \ \exists \varphi = \arg z: \varphi_n \to \varphi$
+\[\triangleright \ (1)-(2) \text{ очевидно}\]
+\[(3): \ z_n = r_n (\cos \varphi_n + i\sin \varphi_n)\] 
+\[x_n = r_n \cos \varphi_n \to r\cos \varphi, \ y_n = r_n \sin \varphi_n \to r\sin \varphi \overset{(1)}{\Rightarrow} z_n \to z\]
+\[(4): |z_n-z|\to 0, \ |z_n-|z|| \leq |z_n-z|\to 0\]
 \[z \neq 0\]
 \[\text{1) Пусть } x > 0, x_n\to x \Rightarrow x_n > 0 \ n > N \Rightarrow \text{(они в правой полуплоскости) можно выбрать } \]
-\[\arg z_n \in \left(-\frac{\pi}{2}, \frac{\pi}{2}\right), \ \phi_n = \arctg \frac{y_n}{x_n} \to \arctg \frac{y}{x} \in Arg(z)\]
+\[\arg z_n \in \left(-\frac{\pi}{2}, \frac{\pi}{2}\right), \ \varphi_n = \arctg \frac{y_n}{x_n} \to \arctg \frac{y}{x} \in Arg(z)\]
 \[\text{Остальное аналогично.} \ \blacktriangleleft\]
 
+\subsection{Экспонента}
 \textbfit{Опр.} $e^z := \lim_{n\to\infty} \left(1+\frac{z}{n}\right)^n$
 
 \textbfit{Утв.} Определение корректно, предел существует, причём $e^{z} = e^x e^{iy} = e^x(\cos y + i\sin y)$
-
-\[\triangleright \left(1+\frac{x}{n} + i\frac{y}{n}\right)^n\]
+\[\triangleright \left(1+\frac{z}{n}\right)^n = \left(1+\frac{x}{n} + i\frac{y}{n}\right)^n\]
 \[\left|\left(1+\frac{x}{n}+i\frac{y}{n}\right)^n\right| = \left|1+\frac{x}{n}+i\frac{y}{n}\right|^n = \left(\left(1+\frac{x}{n}\right)^2+\frac{y^2}{n^2}\right)^\frac{n}{2} = \left(1+\frac{2x}{n} + \frac{x^2+y^2}{n^2}\right)^\frac{n}{2} =\]
-\[= e^{\frac{n}{2}\ln\left(1+\frac{2x}{n}+\frac{x^2+y^2}{n^2}\right)} = e^{\frac{n}{2}\left(\frac{2x}{n}+\overline{o}\left(\frac{1}{n}\right)\right)} \to e^x\]
+\[= e^{\frac{n}{2}\ln\left(1+\frac{2x}{n}+\frac{x^2+y^2}{n^2}\right)} = e^{\frac{n}{2}\left(\frac{2x}{n}+o\left(\frac{1}{n}\right)\right)} \to e^x\]
 \[1+\frac{x}{n} \text{ начиная с какого-то номера лежит в правой полуплоскости}\]
-\[\phi_n = \arg\left(1+\frac{x}{n} + i\frac{y}{n}\right) = \arctg \frac{\frac{y}{n}}{1+\frac{x}{n}} = \arctg \frac{y}{n+x}\]
-\[\arg \left(1+\frac{x}{n}+i\frac{y}{n}\right)^n = n \cdot \phi_n = n\arctg \frac{y}{n+x} = n\left(\frac{y}{n+x} + \overline{o}\left(\frac{1}{n}\right)\right) \to y \blacktriangleleft\]
+\[\varphi_n = \arg\left(1+\frac{x}{n} + i\frac{y}{n}\right) = \arctg \frac{\frac{y}{n}}{1+\frac{x}{n}} = \arctg \frac{y}{n+x}\]
+\[\arg \left(1+\frac{x}{n}+i\frac{y}{n}\right)^n = n \cdot \varphi_n = n\arctg \frac{y}{n+x} = n\left(\frac{y}{n+x} + o\left(\frac{1}{n}\right)\right) \to y \blacktriangleleft\]
 
 \textbfit{Сл.} 1) $e^{z_1+z_2} = e^{z_1}\cdot e^{z_2}$
 
@@ -53,7 +53,7 @@ y_n \to y
 
 \textbfit{Опр.} $\cos z := \frac{e^{iz}+e^{-iz}}{2}$
 
-$\sin z := \frac{e^{iz}-te^{-iz}}{2i}$
+$\sin z := \frac{e^{iz}-e^{-iz}}{2i}$
 
 $\tg z := \frac{\sin z}{\cos z}$
 
@@ -71,23 +71,23 @@ $\ch^2 z - \sh^2z = 1$
 
 \textbfit{Опр.} Пусть $z \neq 0$. Тогда $\Ln z$ называется число $w \in \mathbb{C}: e^w = z$
 
-\textbfit{Утв.} Если $z = re^{i\phi}\neq 0$, то $\Ln z = \ln r + i\phi + 2\pi i k, k \in \mathbb{Z}$ 
-\[\triangleright \ w = u+iv, \ e^w = e^u e^{iv} = re^{i\phi} = z \Leftrightarrow e^u = r, \ v = \phi +2\pi k, k \in \mathbb{Z} \blacktriangleleft\]
+\textbfit{Утв.} Если $z = re^{i\varphi}\neq 0$, то $\Ln z = \ln r + i\varphi + 2\pi i k, k \in \mathbb{Z}$ 
+\[\triangleright \ w = u+iv, \ e^w = e^u e^{iv} = re^{i\varphi} = z \Leftrightarrow e^u = r, \ v = \varphi +2\pi k, k \in \mathbb{Z} \blacktriangleleft\]
 
-\textbfit{Опр.} $z^w :+ e^{w\Ln z}, z \neq 0$
+\textbfit{Опр.} $z^w := e^{w\Ln z}, z \neq 0$
 
 \textbfit{Утв.} $z^n = \prod_{i=1}^n z, \ z^{\frac{1}{n}} = \sqrt[n]{z}$
-\[\triangleright \ 1) z^n = e^{n \ln z} = e^{n(\ln|z|+i\phi+2\pi i k)} = e^{n\ln |z|}e^{in\phi}e^{i2\pi kn} = \prod_{i=1}^n z\]
-\[2) e^{\frac{1}{n}}=e^{\frac{1}{n} (\ln |z| + i\phi + 2\pi ik)} = e^{\frac{1}{n}\ln|z|}e^{i\frac{\phi+2\pi k}{n}} = \sqrt[n]{z}, \ k \in \mathbb{Z} \blacktriangleleft\]
+\[\triangleright \ 1)\ z^n = e^{n \ln z} = e^{n(\ln|z|+i\varphi+2\pi i k)} = e^{n\ln |z|}e^{in\varphi}e^{i2\pi kn} = \prod_{i=1}^n z\]
+\[2)\ e^{\frac{1}{n}}=e^{\frac{1}{n} (\ln |z| + i\varphi + 2\pi ik)} = e^{\frac{1}{n}\ln|z|}e^{i\frac{\varphi+2\pi k}{n}} = \sqrt[n]{z}, \ k \in \mathbb{Z} \blacktriangleleft\]
 
 $A\cdot z = |A| e^{i\arg A}|z|e^{i\arg z}$
 
-$\mathbb{R}^2\to\mathbb{R}^2$
-\[|A|\left(\begin{array}{ll}\cos \phi & -\sin \phi \\
-\sin \phi & \cos \phi \end{array}\right)\left(\begin{array}{ll} x \\ y    
-\end{array}\right), \ \phi = \arg A\]
+$f: \mathbb{R}^2\to\mathbb{R}^2$
+\[f(z) = |A|\left(\begin{array}{ll}\cos \varphi & -\sin \varphi \\
+\sin \varphi & \cos \varphi \end{array}\right)\left(\begin{array}{ll} x \\ y    
+\end{array}\right), \ \varphi = \arg A\]
 
-\textbfit{Опр.} Пусть $f: \mathbb{C}\to\mathbb{C} (\mathbb{R}2\to \mathbb{R}^2)$
+\textbfit{Опр.} Пусть $f: \mathbb{C}\to\mathbb{C} \ (\mathbb{R}^2\to \mathbb{R}^2)$
 
 $f(z) =f(x, y) = \left(\begin{array}{ll} u(x, y) \\ v(x, y) \end{array}\right) = u(x, y) + iv(x,y)$
 
@@ -96,11 +96,12 @@ $f(z) =f(x, y) = \left(\begin{array}{ll} u(x, y) \\ v(x, y) \end{array}\right) =
 A & B \\ C & D
 \end{array}\right) \left(\begin{array}{ll}
 \Delta x \\ \Delta y    
-\end{array}\right) + \overline{o}(|\Delta z|) \] 
-\[A=u_x(x_0, y_0), B = u_y(x_0, y_0), C = v_x, D = v_y\]
-\[f(z_0-\Delta z)-f(z_0)=A\Delta x+B\Delta y + i(C\Delta x + D\Delta y)+\overline{\Delta z} = (*)\]
-\[\Delta x = \frac{\Delta z + \Delta \overline{z}}{2i}, \ \Delta y = \frac{\Delta z - \Delta \overline{z}}{2}\]
-\[(*) = \frac{\Delta z}{2}(A -iB+iC+D)+\frac{\Delta \overline{z}}{2}(A+iB+iC-D) + \overline{o}(\delta z)\]
-\[\frac{\delta f}{\delta z} = \frac{\Delta z}{2}(A -iB+iC+D)\]
-\[\frac{\delta f}{\delta \overline{z}} = \frac{\Delta \overline{z}}{2}(A+iB+iC-D)\]
-\textbfit{Опр.} Пусть $f:\mathbb{C}\to\mathbb{C}$. Говорят, что $f \ \mathbb{C}$--дифференцируема, если $\exists \lim_{\Delta z\to 0} \frac{f(z_0+\Delta z)-f(z_0)}{\Delta z} := f'(z_0)$
+\end{array}\right) + o(|\Delta z|) \] 
+\[A=u_x(x_0, y_0), B = u_y(x_0, y_0), C = v_x(x_0, y_0), D = v_y(x_0, y_0)\]
+\[f(z_0+\Delta z)-f(z_0)=A\Delta x+B\Delta y + i(C\Delta x + D\Delta y)+o(\Delta z) = (*)\]
+\[\Delta x = \frac{\Delta z + \Delta \overline{z}}{2}, \ \Delta y = \frac{\Delta z - \Delta \overline{z}}{2i}\]
+\[(*) = \frac{\Delta z}{2}(A -iB+iC+D)+\frac{\Delta \overline{z}}{2}(A+iB+iC-D) + o(\Delta z)\]
+\[\frac{\partial f}{\partial z} = \frac{A -iB+iC+D}{2}\]
+\[\frac{\partial f}{\partial \overline{z}} = \frac{A+iB+iC-D}{2}\]
+
+\textbfit{Опр.} Пусть $f:\mathbb{C}\to\mathbb{C}$. Говорят, что $f \ \mathbb{C}$--дифференцируема, если $\exists \lim_{\Delta z\to 0} \frac{f(z_0+\Delta z)-f(z_0)}{\Delta z} =: f'(z_0)$

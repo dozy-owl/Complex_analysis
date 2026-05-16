@@ -19,26 +19,26 @@
 
 \textbfit{Опр.} Модулем числа $z = x+iy$ называется число $|z| = \sqrt{x^2+y^2}$.
 
-\[z = |z| \left(\frac{x}{|z|} + i\frac{y}{|z|}\right) = |z|(\cos \phi + i \sin \phi)\]
+\[z = |z| \left(\frac{x}{|z|} + i\frac{y}{|z|}\right) = |z|(\cos \varphi + i \sin \varphi)\]
 
-\textbfit{Опр.} Число $\phi$ называют аргументом числа $z$, если $\begin{cases}\cos \phi = \frac{x}{|z|} \\ \sin \phi = \frac{y}{|z|}\end{cases}$
+\textbfit{Опр.} Число $\varphi$ называют аргументом числа $z$, если $\begin{cases}\cos \varphi = \frac{x}{|z|} \\ \sin \varphi = \frac{y}{|z|}\end{cases}$
 
-\textbfit{Опр.} $Arg \ z = \{\phi \in \mathbb{R} | \phi = \arg z\}$
+\textbfit{Опр.} $Arg \ z = \{\varphi \in \mathbb{R} | \varphi = \arg z\}$
 
 Для 0 аргумент не определён.
 
-\textbfit{Обозначение} (Эйлера): $e^{i\phi} := \cos \phi + i \sin \phi$ (на данный момент считаем картинкой, не верим, что это получено из ряда Тейлора)
+\textbfit{Обозначение} (Эйлера): $e^{i\varphi} := \cos \varphi + i \sin \varphi$ (на данный момент считаем картинкой, не верим, что это получено из ряда Тейлора)
 
-\textbfit{Утв.} $e^{i(\phi_1+\phi_2)} = e^{i\phi_1} e^{i\phi_2}$
+\textbfit{Утв.} $e^{i(\varphi_1+\varphi_2)} = e^{i\varphi_1} e^{i\varphi_2}$
 \[\triangleright \text{ Простая проверка по определению даёт формулу. } \blacktriangleleft\]
 
-\textbfit{Утв.} (Формула Муавра) $(e^{i\phi})^n = e^{in\phi}$
+\textbfit{Утв.} (Формула Муавра) $(e^{i\varphi})^n = e^{in\varphi}$
 
-\textbfit{Утв.} $z = |z| e^{i\phi}$ (полярный вид числа), $\overline{z} = |z| e^{-i\phi}$
+\textbfit{Утв.} $z = |z| e^{i\varphi}$ (полярный вид числа), $\overline{z} = |z| e^{-i\varphi}$
 
-\textbfit{Утв.} $z_1 = |z_1| e^{i\phi_1}, \ z_2 = |z_2| e^{i\phi_2} \Rightarrow \ z_1 z_2 = |z_1| \cdot |z_2| e^{i(\phi_1+\phi_2)}, \ \frac{z_1}{z_2} = \frac{|z_1|}{|z_2|} e^{i(\phi_1-\phi_2)}$
-\[\triangleright \ z_2^{-1} = \frac{x_2}{x_2^2+y_2^2} - i \frac{y_2}{x_2^2+y_2^2} =\frac{1}{|z_2|^2} \overline{z_2} = \frac{1}{|z_2|^2} \cdot |z_2| e^{-i\phi_2} \blacktriangleleft\]
-\[z^n = |z|^n e^{in\phi}\]
+\textbfit{Утв.} $z_1 = |z_1| e^{i\varphi_1}, \ z_2 = |z_2| e^{i\varphi_2} \Rightarrow \ z_1 z_2 = |z_1| \cdot |z_2| e^{i(\varphi_1+\varphi_2)}, \ \frac{z_1}{z_2} = \frac{|z_1|}{|z_2|} e^{i(\varphi_1-\varphi_2)}$
+\[\triangleright \ z_2^{-1} = \frac{x_2}{x_2^2+y_2^2} - i \frac{y_2}{x_2^2+y_2^2} =\frac{1}{|z_2|^2} \overline{z_2} = \frac{1}{|z_2|^2} \cdot |z_2| e^{-i\varphi_2} \blacktriangleleft\]
+\[z^n = |z|^n e^{in\varphi}\]
 
 \textbfit{Утв.} $z_1 = z_2 \Leftrightarrow \begin{cases} |z_1|=|z_2| \\ Arg \ z_1 = Arg \ z_2\end{cases}$
 
@@ -51,7 +51,7 @@
 \subsection{Стереографическая проекция}
 
 \includegraphics[width=0.6\linewidth]{Riman_sphere.png}
-\[\xi^2 + \eta^2 + \left(y - \frac{1}{2}\right)^2 = \frac{1}{4} \text{ -- сфера Римана}\]
+\[\xi^2 + \eta^2 + \left(\zeta - \frac{1}{2}\right)^2 = \frac{1}{4} \text{ -- сфера Римана}\]
 
 \textbfit{Опр.} Стереографической проекцией называется биекция $\mathbb{C}$ и $S \setminus \{N\} : z = (x_0, y_0) \leftrightarrow Z = S \cap zN$
 \[N(0, 0, 1) \text{ -- полюс}, \ \overline{a} = (x, y - 1)\]

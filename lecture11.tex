@@ -1,13 +1,14 @@
-\section{Лекция 11. Теорема единственности. Теорема Вейерштрасса}
+\section{Лекция 11. Теорема о единственности. Теорема Вейерштрасса}
 \textbfit{Опр.} Пусть $f(\infty) = 0, \ f\in \mathcal{O}(|z|>R)$. Тогда порядком нуля в бесконечности называют порядок нуля $f\left(\frac{1}{z}\right)$ в 0.
 
 $g(z) = f\left(\frac{1}{z}\right) = z^N \tilde{g}(z), \ \tilde{g}(z) \neq 0$
 
 $f(z) = g \left(\frac{1}{z}\right) = \frac{\tilde{g}\left(\frac{1}{z}\right)}{z^N} = \frac{1}{z^N}g_1(z), \ \tilde{g} \left(\frac{1}{z}\right) \neq 0$
 
+\subsection{Теорема о единственности}
 \textbfit{Теорема} (о единственности)
 
-Пусть $f, g \in \mathcal{O}(D), f \overset{E}{g}, \ E \subset D, E $ имеет предельную точку в $D.$ Тогда $f \overset{D}{=} g.$
+Пусть $f, g \in \mathcal{O}(D), f \overset{E}{=} g, \ E \subset D, E $ имеет предельную точку в $D.$ Тогда $f \overset{D}{=} g.$
 \[\triangleright \text{ Рассмотрим } F = f - g, \ F \in \mathcal{O}(D), F \overset{E}{=} 0\]
 \[\text{Пусть $a$ -- предельная точка } E, a \in D \Rightarrow F(a) = 0 \text{. Тогда $a$ -- неизолированный ноль.} \Rightarrow\]
 \[\Rightarrow \exists U_R(a) \subset D: F = 0 \text{ на } U_R(a)\]
@@ -23,8 +24,9 @@ $f(z) = g \left(\frac{1}{z}\right) = \frac{\tilde{g}\left(\frac{1}{z}\right)}{z^
 \[f \in \mathcal{O}(|z-1|<1), z_n \to \frac{1}{n} \in U_1(0), f \left(\frac{1}{n}\right) = 0 \overset{?}{\Rightarrow} f = \sin \frac{\pi}{z}\]
 \[f \in \mathcal{O}(\mathbb{C}), z_n \to n \in U_1(0), f(n) = 0 \overset{?}{\Rightarrow} f = \sin \pi z\]
 
-\textbfit{Замечание} Теорема Лагранжа не существует в комплексном анализе
+\textbfit{Замечание} Теоремы Лагранжа не существует в комплексном анализе
 
+\subsection{Теорема Вейерштрасса}
 \textbfit{Теорема} (Вейерштрасса)
 
 Пусть $f_n \in \mathcal{O}(D)$. Пусть $\forall K \subset D, K$ -- компакт $f_n \overset{K}{\rightrightarrows} f$ (меньше, чем сходимость на всей $D$). Тогда
@@ -35,7 +37,7 @@ $f(z) = g \left(\frac{1}{z}\right) = \frac{\tilde{g}\left(\frac{1}{z}\right)}{z^
 
 3) $\forall K \subset D, K -$ компакт $f_n^{(k)}(z) \overset{K}{\rightrightarrows} f(z)$
 
-\[\triangleright 1) \text{ Покажем } f \in \mathcal{O}(D)\]
+\[\triangleright \ 1) \text{ Покажем } f \in \mathcal{O}(D)\]
 \[f \in C(D) \text{ (т.к. $C(D) \ni f_n \overset{K}{\rightrightarrows} f \Rightarrow f \in C(K) \forall z_0 \in D \exists \overline{U_R(z_0)} \subset{D} \Rightarrow f \in C(\overline{U_R(z_0)}) \Rightarrow$}\]
 \[\Rightarrow f \in C(z_0) \Rightarrow f \in C(D))\]
 \[\text{Пусть } \overline{\triangle} \subset D \int_{\partial \overline{\triangle}} f(z) dz = \int_{\partial \overline{\triangle}} (\lim_{n\to\infty} f_n(z))dz \overset{f_n \overset{\partial \triangle}{\rightrightarrows} f}{=} \lim_{n\to\infty} f_n(z) dz = 0, \ f_n(z) = 0\text{ (л. Гурса)} \Rightarrow\]
@@ -50,7 +52,7 @@ $f(z) = g \left(\frac{1}{z}\right) = \frac{\tilde{g}\left(\frac{1}{z}\right)}{z^
 \[\text{ Тогда } \forall z \in \overline{U_{R(a)}} \ f_n^{k}(z) - f^{(k)}(z) = \frac{k!}{2\pi i} \oint_{|\zeta-a|=r(a)} \frac{f_n(\zeta)-f(\zeta)}{(\zeta-z)^{k+1}d\zeta}\]
 \[\sup_{|\zeta-a|=r(a)} \left|\frac{k!}{2\pi i}\oint_{|\zeta-a|=r(a)}\frac{f_n(\zeta)-f(\zeta)}{(\zeta - z)^{k+1}} d\zeta\right| \leq \frac{k!}{2\pi i} \cdot \frac{\epsilon}{(r-R)^{k+1}} \text{ т.е. } \rightrightarrows\]
 \[\forall K \subset D, K \text{ -- компакт. Рассмотрим } \{U_{R(a)}(a)\}_{a \in K} \text{ -- открытое покрытие, выберем конечное}\]
-\[\text{подпокрытие } K \subset \bigcup_{n=1}^N \overline{U_{R_n(a_n)(a_n)}} \text{, т.к. их конечно, то } f_n^{(k)} \overset{\overline{U_{R_n(a_n)(a_n)}}}{\rightrightarrows} f^{(k)} \blacktriangleleft\]
+\[\text{подпокрытие } K \subset \bigcup_{n=1}^N \overline{U_{R_n(a_n)}(a_n)} \text{, т.к. их конечно, то } f_n^{(k)} \overset{\overline{U_{R_n(a_n)}(a_n)}}{\rightrightarrows} f^{(k)} \blacktriangleleft\]
 
 \textbfit{Теорема} (Рунге)
 
