@@ -39,11 +39,11 @@ y_n \to y
 \subsection{Экспонента}
 \textbfit{Опр.} $e^z := \lim_{n\to\infty} \left(1+\frac{z}{n}\right)^n$
 
-\textbfit{Утв.} Определение корректно, предел существует, причём $e^{z} = e^x e^{iy} = e^x(\cos y + i\sin y)$
+\textbfit{Утв.} Определение корректно, предел существует, причём $e^{z} = e^x e^{iy} = e^x(\cos y + i\sin y)$.
 \[\triangleright \left(1+\frac{z}{n}\right)^n = \left(1+\frac{x}{n} + i\frac{y}{n}\right)^n\]
 \[\left|\left(1+\frac{x}{n}+i\frac{y}{n}\right)^n\right| = \left|1+\frac{x}{n}+i\frac{y}{n}\right|^n = \left(\left(1+\frac{x}{n}\right)^2+\frac{y^2}{n^2}\right)^\frac{n}{2} = \left(1+\frac{2x}{n} + \frac{x^2+y^2}{n^2}\right)^\frac{n}{2} =\]
 \[= e^{\frac{n}{2}\ln\left(1+\frac{2x}{n}+\frac{x^2+y^2}{n^2}\right)} = e^{\frac{n}{2}\left(\frac{2x}{n}+o\left(\frac{1}{n}\right)\right)} \to e^x\]
-\[1+\frac{x}{n} \text{ начиная с какого-то номера лежит в правой полуплоскости}\]
+\[1+\frac{x}{n} \text{, начиная с какого-то номера, лежит в правой полуплоскости.}\]
 \[\varphi_n = \arg\left(1+\frac{x}{n} + i\frac{y}{n}\right) = \arctg \frac{\frac{y}{n}}{1+\frac{x}{n}} = \arctg \frac{y}{n+x}\]
 \[\arg \left(1+\frac{x}{n}+i\frac{y}{n}\right)^n = n \cdot \varphi_n = n\arctg \frac{y}{n+x} = n\left(\frac{y}{n+x} + o\left(\frac{1}{n}\right)\right) \to y \blacktriangleleft\]
 
@@ -69,14 +69,14 @@ $\sh z = -i\sin(iz)$
 
 $\ch^2 z - \sh^2z = 1$
 
-\textbfit{Опр.} Пусть $z \neq 0$. Тогда $\Ln z$ называется число $w \in \mathbb{C}: e^w = z$
+\textbfit{Опр.} Пусть $z \neq 0$. Тогда $\Ln z$ называется число $w \in \mathbb{C}: e^w = z$.
 
-\textbfit{Утв.} Если $z = re^{i\varphi}\neq 0$, то $\Ln z = \ln r + i\varphi + 2\pi i k, k \in \mathbb{Z}$ 
+\textbfit{Утв.} Если $z = re^{i\varphi}\neq 0$, то $\Ln z = \ln r + i\varphi + 2\pi i k, k \in \mathbb{Z}$ .
 \[\triangleright \ w = u+iv, \ e^w = e^u e^{iv} = re^{i\varphi} = z \Leftrightarrow e^u = r, \ v = \varphi +2\pi k, k \in \mathbb{Z} \blacktriangleleft\]
 
-\textbfit{Опр.} $z^w := e^{w\Ln z}, z \neq 0$
+\textbfit{Опр.} $z^w := e^{w\Ln z}, z \neq 0$.
 
-\textbfit{Утв.} $z^n = \prod_{i=1}^n z, \ z^{\frac{1}{n}} = \sqrt[n]{z}$
+\textbfit{Утв.} $z^n = \prod_{i=1}^n z, \ z^{\frac{1}{n}} = \sqrt[n]{z}$.
 \[\triangleright \ 1)\ z^n = e^{n \ln z} = e^{n(\ln|z|+i\varphi+2\pi i k)} = e^{n\ln |z|}e^{in\varphi}e^{i2\pi kn} = \prod_{i=1}^n z\]
 \[2)\ e^{\frac{1}{n}}=e^{\frac{1}{n} (\ln |z| + i\varphi + 2\pi ik)} = e^{\frac{1}{n}\ln|z|}e^{i\frac{\varphi+2\pi k}{n}} = \sqrt[n]{z}, \ k \in \mathbb{Z} \blacktriangleleft\]
 
@@ -87,7 +87,7 @@ $f: \mathbb{R}^2\to\mathbb{R}^2$
 \sin \varphi & \cos \varphi \end{array}\right)\left(\begin{array}{ll} x \\ y    
 \end{array}\right), \ \varphi = \arg A\]
 
-\textbfit{Опр.} Пусть $f: \mathbb{C}\to\mathbb{C} \ (\mathbb{R}^2\to \mathbb{R}^2)$
+\textbfit{Опр.} Пусть $f: \mathbb{C}\to\mathbb{C} \ (\mathbb{R}^2\to \mathbb{R}^2)$.
 
 $f(z) =f(x, y) = \left(\begin{array}{ll} u(x, y) \\ v(x, y) \end{array}\right) = u(x, y) + iv(x,y)$
 
@@ -104,4 +104,4 @@ A & B \\ C & D
 \[\frac{\partial f}{\partial z} = \frac{A -iB+iC+D}{2}\]
 \[\frac{\partial f}{\partial \overline{z}} = \frac{A+iB+iC-D}{2}\]
 
-\textbfit{Опр.} Пусть $f:\mathbb{C}\to\mathbb{C}$. Говорят, что $f \ \mathbb{C}$--дифференцируема, если $\exists \lim_{\Delta z\to 0} \frac{f(z_0+\Delta z)-f(z_0)}{\Delta z} =: f'(z_0)$
+\textbfit{Опр.} Пусть $f:\mathbb{C}\to\mathbb{C}$. Говорят, что $f \ \mathbb{C}$--дифференцируема, если $\exists \lim_{\Delta z\to 0} \frac{f(z_0+\Delta z)-f(z_0)}{\Delta z} =: f'(z_0)$.

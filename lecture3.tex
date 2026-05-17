@@ -7,7 +7,7 @@
 ференцируема в $z_0$ и выполнено условие Коши-Римана $\begin{cases}
     u_x = v_y \\
     u_y = -v_x
-\end{cases}$, т.е. $\frac{\partial f}{\partial \overline{z}}=0$
+\end{cases}$, т.е. $\frac{\partial f}{\partial \overline{z}}=0$.
 \[\triangleright \ (\Rightarrow) f(z_0+\Delta z)-f(z_0)=f'(z_0)\Delta z +o(\Delta z) = |f'(z_0)|\left(\begin{array}{ll}
 \cos \varphi & -\sin \varphi \\
 \sin \varphi & \cos \varphi    
@@ -29,7 +29,7 @@
 \[\frac{\partial f}{\partial \overline{z}} = 1 \neq 0\]
 \[\text{Условие Коши-Римана не выполнено, значит, не $\mathbb{C}-$дифференцируема.}\]
 
-\textbfit{Опр.} Пусть $\theta \in \mathbb{R}, \ f:U(z_0)\to\mathbb{C}$. Тогда производной по направлению $\theta$ называется $f'_\theta(z_0) = \lim_{\Delta z \to 0, \ \arg \Delta z = \theta} \frac{f(z_0+\Delta z)-f(z_0)}{\Delta z}$
+\textbfit{Опр.} Пусть $\theta \in \mathbb{R}, \ f:U(z_0)\to\mathbb{C}$. Тогда производной по направлению $\theta$ называется $f'_\theta(z_0) = \lim_{\Delta z \to 0, \ \arg \Delta z = \theta} \frac{f(z_0+\Delta z)-f(z_0)}{\Delta z}$.
 \[f'_0(z_0) = u_x +iv_x\]
 \[f'_{\frac{\pi}{2}} = -i(u_y+iv_y)\]
 
@@ -72,7 +72,7 @@ e^x \sin y & e^x \cos y
 \cos \varphi & -\sin \varphi \\
 \sin \varphi & \cos \varphi   
 \end{array}\right) \text{, т.е. выполнено}\]
-\[\text{условие Коши-Римана}\]
+\[\text{условие Коши-Римана.}\]
 \[g'(w_0) = \frac{1}{f'(z_0)} \ \blacktriangleleft\]
 
 \textbfit{Пр.} $f(z) = z^2$
@@ -93,12 +93,14 @@ e^x \sin y & e^x \cos y
 \subsection{Голоморфность}
 \textbfit{Опр.} Пусть $f: U(z_0)\to \mathbb{C}. \ f$ называется голоморфной в точке $z_0$, если $\exists U_\epsilon(z_0)$, т.ч. $f \ \mathbb{C}-$дифференцируема в $U_\epsilon(z_0)$.
 
-Если $f: D \to \mathbb{C}, \ D-$область, то говорят, что $f$ голоморфна в $D$, если она голоморфна в каждой точке $D$. \textit{Обозначение} $f \in \mathcal{O}(D)$
+Если $f: D \to \mathbb{C}, \ D-$область, то говорят, что $f$ голоморфна в $D$, если она голоморфна в каждой точке $D$. 
+
+\textbfit{Обозначение.} $f \in \mathcal{O}(D)$,
 
 \textbfit{Опр.} Пусть $f:U(\infty)\to \mathbb{C}$. Говорят, что $f \ \mathbb{C}-$ дифференцируема (голоморфна), если $\mathbb{C}-$дифференцируема (голоморфна) в точке $z=0$ функция $F(z) = \begin{cases}
     f(\frac{1}{z}) \\
     f(\infty)
-\end{cases}$
+\end{cases}.$
 
 \textbfit{Пр.} $f(z) = \begin{cases}
     \frac{1}{z} \\ 0 & z =\infty
@@ -107,4 +109,4 @@ e^x \sin y & e^x \cos y
     z \\ 0 & z = 0
 \end{cases}\]
 
-\textbfit{Опр.} Пусть $z_0 \in \overline{\mathbb{C}}, \ f:U(z_0)\to\mathbb{C}, \ f(z_0)=\infty$. Тогда она $\mathbb{C}-$дифференцируема (голоморфна) в $z_0$, если в $z_0$ голоморфна $\frac{1}{z_0}$, т.е. если $f(\infty)=\infty$, то надо изучать $\frac{1}{f(\frac{1}{z})}$ в $z=0$
+\textbfit{Опр.} Пусть $z_0 \in \overline{\mathbb{C}}, \ f:U(z_0)\to\mathbb{C}, \ f(z_0)=\infty$. Тогда она $\mathbb{C}-$дифференцируема (голоморфна) в $z_0$, если в $z_0$ голоморфна $\frac{1}{z_0}$, т.е. если $f(\infty)=\infty$, то надо изучать $\frac{1}{f(\frac{1}{z})}$ в $z=0$.

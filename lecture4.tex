@@ -6,115 +6,118 @@
     x(t) \\
     y(t)    
 \end{array}\right)\]
-\[\Gamma(a) \text{ - начало пути}, \ \Gamma(b) \text{ - конец пути. Путь называется замкнутым, если } \Gamma(a) = \Gamma(b)\]
+\[\Gamma(a) \text{ -- начало пути}, \ \Gamma(b) \text{ -- конец пути. Путь называется замкнутым, если } \Gamma(a) = \Gamma(b).\]
 
-\textbfit{Опр.} Путь называется простым (жордановым), если $\Gamma-$инъекция $[a, b]$. Замкнутый путь называется жордановым, если $\Gamma-$ инъекция $[a, b].$ 
+\textbfit{Опр.} Путь называется простым (жордановым), если $\Gamma-$инъекция $[a, b]$. Замкнутый путь называется жордановым, если $\Gamma-$ инъекция $[a, b).$ 
 
-\textbfit{Опр.} Несобственным путём называется $\Gamma : [a, b] \to S, \ \Gamma \in C[a,b].$
+\textbfit{Опр.} Несобственным путём называется $\Gamma : [a, b] \to S, \ \Gamma \in C[a,b], \ S$ -- сфера Римана.
 
-\textbfit{Опр.} Путь $\Gamma:[a, b]\to \mathbb{C}$ называется гладким, если $\Gamma \in C^1[a,b]$ и $\overset{.}{\Gamma} \neq 0$, т.е. $\left(\begin{array}{ll}
-    \overset{.}{x(t)} \\
-    \overset{.}{y(t)}    
+\textbfit{Опр.} Путь $\Gamma:[a, b]\to \mathbb{C}$ называется гладким, если $\Gamma \in C^1[a,b]$ и $\dot{\Gamma} \neq 0$, т.е. $\left(\begin{array}{ll}
+    \dot{x(t)} \\
+    \dot{y(t)}    
 \end{array}\right) \neq \left(\begin{array}{ll}
  0 \\
  0    
-\end{array}\right)$
+\end{array}\right).$
 
 \textbfit{Пр.} $t \in [0, 1]$
 \[1) \ \Gamma(t) = t\]
-\[\overset{.}{\Gamma}(t) = \left(\begin{array}{ll}
+\[\dot{\Gamma}(t) = \left(\begin{array}{ll}
 1 \\
 0    
 \end{array}\right) \neq 0\]
 \[2) \ \Gamma(t) = t + it^2\]
-\[\overset{.}{\Gamma}(t) = \left(\begin{array}{ll}
+\[\dot{\Gamma}(t) = \left(\begin{array}{ll}
 1 \\
 2t   
 \end{array}\right) \neq 0\]
 \[3) \ \Gamma(t) = t^2+it^4\]
-\[\overset{.}{\Gamma}(t) = \left(\begin{array}{ll}
+\[\dot{\Gamma}(t) = \left(\begin{array}{ll}
 2t \\
 4t^3   
-\end{array}\right) \neq 0\]
-В примерах 2 и 3 пробежали одну и ту же параболу, но по-разному. Получили гладкий и негладкий пути из-за разной параметризации.
+\end{array}\right)\]
 
-\textbfit{Опр.} Пусть $\Gamma: [a, b] \to \mathbb{C} - $ жорданов путь. Тогда $\gamma = \Gamma([a,b])$ называется жордановой кривой.
+В примерах 2 и 3 пробежали одну и ту же параболу, но по-разному. Получили гладкий и негладкий (при $t=0$) пути из-за разной параметризации.
+
+\textbfit{Опр.} Пусть $\Gamma: [a, b] \to \mathbb{C} \ - $ жорданов путь. Тогда $\gamma = \Gamma([a,b])$ называется жордановой кривой.
 
 \textbfit{Пр.} $\Gamma(t) = e^{it}, \ t \in [0, 2\pi]$
 \[\Gamma(t) = e^{2it}\]
 
 Пробежали окружность: в первом примере единожды, во втором дважды. Первый путь -- жорданов, второй нет. По итогу окружность -- жорданова кривая.
 
-\textbfit{Опр.} Если $\gamma -$ жорданова кривая, а $\Gamma:[a,b]\to \mathbb{C}-$ жорданов путь, т.ч. $\Gamma[a,b]=\gamma$, тогда говорят, что $\Gamma-$ параметризация $\gamma$.
+\textbfit{Опр.} Если $\gamma \ -$ жорданова кривая, а $\Gamma:[a,b]\to \mathbb{C} \ -$ жорданов путь, т.ч. $\Gamma[a,b]=\gamma$, тогда говорят, что $\Gamma \ -$ параметризация $\gamma$.
 
-Параметризация задаёт ориентацию (от A к B или от B к A).
+Параметризация задаёт ориентацию (от a к b или от b к a).
 
-+ обход замкнутой кривой по умолчанию считаем против часовой стрелки.
+\textit{+ обход замкнутой кривой по умолчанию считаем против часовой стрелки.}
 
 \textbfit{Пр.} $\Gamma(t) = t, \ t \in [0, 1]$
 \[\Gamma(t) = 1-t\]
 
-\textbfit{Опр.} Два гладких пути $\Gamma_1 : [a_1, b_1]\to \mathbb{C}$ и $\Gamma_2 : [a_2, b_2] \to \mathbb{C}$ называются эквивалентными, если $\exists g : [a_1, b_1] \to [a_2, b_2] \ g' > 0$ на $[a_1, b_1]$, т.ч. $g([a_1, b_1])=[a_2, b_2]$ и $\Gamma_2(g(t)) = \Gamma_1(t) \ t \in [a_1, b_1]$.
+\textbfit{Опр.} Два гладких пути $\Gamma_1 : [a_1, b_1]\to \mathbb{C}$ и $\Gamma_2 : [a_2, b_2] \to \mathbb{C}$ называются эквивалентными, если $\exists g : [a_1, b_1] \to [a_2, b_2] \ g' > 0$ на $[a_1, b_1]$, т.ч. $g([a_1, b_1])=[a_2, b_2]$ и $\Gamma_2(g(t)) = \Gamma_1(t), \ t \in [a_1, b_1]$.
 
-По сути пути, которые проходят прямую в одном и том же направлении.
+По сути, пути, которые проходят прямую в одном и том же направлении.
 
 \textbfit{Опр.} Путь $\Gamma:[a,b] \to \mathbb{C}$ называется кусочно-гладким, если $\exists$ разбиение $T = \{a=t_0<t_1<\ldots<t_k=b\}$, т.ч. $\Gamma|_{[t_{k-1}, t_k]}-$гладкий путь.
 
-\textbfit{Опр.} Множество $A \subset \mathbb{C} (\overline{\mathbb{C}})$ называется линейно-связным, если $\forall z_1, z_2 \in A \exists$ путь (м.б. несобственный), т.ч. $\Gamma([a,b])\subset A, \Gamma(a) = z_1, \Gamma(b) = z_2$.
+\textbfit{Опр.} Множество $A \subset \mathbb{C} (\overline{\mathbb{C}})$ называется линейно-связным, если $\forall z_1, z_2 \in A \ \exists$ путь (м.б. несобственный), т.ч. $\Gamma([a,b])\subset A, \Gamma(a) = z_1, \Gamma(b) = z_2$.
 
 \textbfit{Опр.} Множество $A$ называется областью, если оно открыто и связно ($\Leftrightarrow$ в $\mathbb{R}^2$ открыто и линейно-связно).
 
-\textbfit{Обозначение} Если $\gamma = \delta D, D-$область. $\gamma -$ замкнутая кривая. Тогда $\delta D^+ - $обход, при котором область остаётся слева. $\delta -$ граница.
+\textbfit{Обозначение.} Если $\gamma = \partial D, \ D \ -$ область, $\gamma \ -$ замкнутая кривая, тогда $\partial D^+ \ - $ обход, при котором область остаётся слева. $\partial \ -$ граница.
 
-\textbfit{Пр.} $(|z|=1)^+, \ \delta(|z|<1)^+=\delta (|z|>1)^-$
+\textbfit{Пр.} $(|z|=1)^+, \ \partial(|z|<1)^+=\partial (|z|>1)^-$
 
-\textbfit{Опр.} Пусть $\gamma_1, \gamma_2 -$ две гладкие кривые. Тогда $\angle(\gamma_1, \gamma)2 = \angle(\overset{.}{\Gamma_1(t)}, \overset{.}{\Gamma_2(t)})$, где $\Gamma_1, \Gamma_2-$ гладкие параметризации. (в точке пересечения $z_0 = \Gamma_1(t_0) = \Gamma_2(t_0)$)
+\textbfit{Опр.} Пусть $\gamma_1, \gamma_2 \ -$ две гладкие кривые. Тогда $\angle(\gamma_1, \gamma_2) = \angle(\dot{\Gamma_1(t)}, \dot{\Gamma_2(t)})$, где $\Gamma_1, \Gamma_2 \ -$ гладкие параметризации. (в точке пересечения $z_0 = \Gamma_1(t_0) = \Gamma_2(t_0)$)
 
-\textbfit{Опр.} Пусть $D-$область. $f:D \to \mathbb{C} (\overline{\mathbb{C}}), \ f$ называется однолистным в $D$, если оно инъективно в $D$.
+\textbfit{Опр.} Пусть $D \ -$ область, $f:D \to \mathbb{C} (\overline{\mathbb{C}}). \ f$ называется однолистным в $D$, если оно инъективно в $D$.
 
 \subsection{Конформные отображения}
 \textbfit{Опр.} Пусть $f:U(z_0)\to \mathbb{C}$. Говорят, что $f$ конформно в т. $z_0$, если оно голоморфно в т. $z_0$ и $f'(z_0) \neq 0$.
 
-$f:D\to \mathbb{C}, \ D \subset \mathbb{C}, D-$область. $f$ называют конформным в $D$, если оно конформно в каждой точке и однолистно.
+$f:D\to \mathbb{C}, \ D \subset \mathbb{C}, D \ -$ область. $f$ называют конформным в $D$, если оно конформно в каждой точке и однолистно.
 
 Для $f: \overline{\mathbb{C}}\to\overline{\mathbb{C}}$ конформность доопределяется аналогично голоморфности.
 
-\textbfit{Теорема} Пусть $\gamma_1, \gamma_2-$ гладкие кривые6 $z_0-$ т. пересечения. $f:U(z_0) \to \mathbb{C}, f-$ конформно в $z_0. \ \angle(\gamma_1, \gamma_2)=\angle(f(\gamma_1), f(\gamma_2)).$
-\[\triangleright \text{Пусть $\Gamma(t) - $ гладкий путь.}\]
-\[f(\Gamma(t)) \text{ - образ пути.}\]
-\[\overset{.}{\Gamma(t)} = \left(\begin{array}{ll}
-\overset{.}{x(t)} \\
-\overset{.}{y(t)}   
-\end{array}\right) \text{ - исходный касательный вектор.}\]
-\[\overset{.}{f(\Gamma(t))} = df|_{z_0}\left(\begin{array}{ll}
-\overset{.}{x(t)} \\
-\overset{.}{y(t)}   
-\end{array}\right) = |f'(z_0)|\left(\begin{array}{ll}
-\cos \phi & -\sin \phi \\
-\sin \phi & \cos \phi    
-\end{array}\right) \left(\begin{array}{ll}
-\overset{.}{x(t)} \\
-\overset{.}{y(t)}   
-\end{array}\right)\]
-\[\text{Т.е. все касательные векторы поворачиваются на один и тот же угол } \phi = \arg f'(z_0)\]
-\[f(z) = u(z) + iv(z), \ f(\Gamma(t)) + iv(\Gamma(t))\]
+\textbfit{Теорема.} Пусть $\gamma_1, \gamma_2-$ гладкие кривые, $z_0-$ т. пересечения. $f:U(z_0) \to \mathbb{C}, f-$ конформно в $z_0.$ Тогда $\angle(\gamma_1, \gamma_2)=\angle(f(\gamma_1), f(\gamma_2)).$
+\[\triangleright \ \text{Пусть $\Gamma(t) - $ гладкий путь.}\]
+\[f(\Gamma(t)) \text{ -- образ пути.}\]
+\[\dot{\Gamma(t)} = \left(\begin{array}{ll}
+\dot{x(t)} \\
+\dot{y(t)}   
+\end{array}\right) \text{ -- исходный касательный вектор.}\]
+\[f(z) = u(z) + iv(z) = u(\Gamma(t)) + iv(\Gamma(t))\]
 \[df|_{z_0} d\Gamma|_{t_0} = \left(\begin{array}{ll}
 u_x & u_y \\ 
 v_x & v_y    
 \end{array}
 \right) \left(\begin{array}{ll}
-\overset{.}{x(t)} \\
-\overset{.}{y(t)}   
-\end{array}\right)\]
+\dot{x(t_0)} \\
+\dot{y(t_0)}   
+\end{array}\right) = \dot{f}(\Gamma(t))\]
+\[\dot{f}(\Gamma(t)) = df|_{z_0}\left(\begin{array}{ll}
+\dot{x(t)} \\
+\dot{y(t)}   
+\end{array}\right) = |f'(z_0)|\left(\begin{array}{ll}
+\cos \varphi & -\sin \varphi \\
+\sin \varphi & \cos \varphi    
+\end{array}\right) \left(\begin{array}{ll}
+\dot{x(t_0)} \\
+\dot{y(t_0)}   
+\end{array}\right) = (*) \neq 0\]
+\[\text{Полученная прямая гладкая, и касательный вектор вычисляется по формуле } (*).\]
+\[\text{Т.е. все касательные векторы поворачиваются на один и тот же угол } \varphi = \arg f'(z_0). \Rightarrow \]
+\[\Rightarrow \angle(\gamma_1, \gamma_2)=\angle(f(\gamma_1), f(\gamma_2)) \ \blacktriangleleft\]
 
-\textbfit{Пр.} $z^2$
+\textbfit{Пр.} $f(z) = z^2$
 
 Конформность нарушается в 0.
 
-\textbfit{Теорема} (Жордана) (б/д) Пусть $\gamma-$ замкнутая Жорданова кривая. Тогда $\mathbb{C}\setminus \gamma = D_1 \cup D_2 -$ непересекающихся областей, т.ч. $\gamma = \delta D_1 = \delta D_2$.
+\textbfit{Теорема} (Жордана) (б/д). Пусть $\gamma \ -$ замкнутая жорданова кривая. Тогда $\mathbb{C}\setminus \gamma = D_1 \cup D_2 -$ непересекающихся областей, т.ч. $\gamma = \partial D_1 = \partial D_2$.
 
-Если $\gamma - $несобственная жорданова кривая на сфере $S$, то справедлив аналогичный факт.
+Если $\gamma \ - $ несобственная жорданова кривая на сфере $S$, то справедлив аналогичный факт.
 
-Если $\gamma - $незамкнутая жорданова кривая, то $\mathbb{C} \setminus \gamma (S \setminus \gamma) - $область.
+Если $\gamma \ - $ незамкнутая жорданова кривая, то $\mathbb{C} \setminus \gamma \ (S \setminus \gamma) \ - $ область.
 
-\textbfit{Теорема} Пусть $f: D \to \overline{\mathbb{C}}, D \subset \overline{\mathbb{C}}, \ f-$ конформно в $D$. $\delta D = \gamma, f\in C(D), f(\gamma) = \overline(\gamma), \gamma-$ жорданова кривая. $f(\gamma)=\overline\gamma-$ биекция. $\overline\gamma = \delta G, G-$область, $\exists z_0\in D: f(z_0)\in G.$ Тогда $f(D)=G$.
+\textbfit{Теорема.} Пусть $f: D \to \overline{\mathbb{C}}, D \subset \overline{\mathbb{C}}, \ f-$ конформно в $D$. $\partial D = \gamma, f\in C(D), f(\gamma) = \overline{\gamma}, \gamma \ -$ жорданова кривая. $f(\gamma)=\overline\gamma \ -$ биекция. $\overline\gamma = \partial G, G \ -$ область, $\exists z_0\in D: f(z_0)\in G.$ Тогда $f(D)=G$.
