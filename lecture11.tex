@@ -6,9 +6,7 @@ $g(z) = f\left(\frac{1}{z}\right) = z^N \tilde{g}(z), \ \tilde{g}(z) \neq 0$
 $f(z) = g \left(\frac{1}{z}\right) = \frac{\tilde{g}\left(\frac{1}{z}\right)}{z^N} = \frac{1}{z^N}g_1(z), \ \tilde{g} \left(\frac{1}{z}\right) \neq 0$
 
 \subsection{Теорема о единственности}
-\textbfit{Теорема} (о единственности)
-
-Пусть $f, g \in \mathcal{O}(D), f \overset{E}{=} g, \ E \subset D, E $ имеет предельную точку в $D.$ Тогда $f \overset{D}{=} g.$
+\textbfit{Теорема} (о единственности). Пусть $f, g \in \mathcal{O}(D), f \overset{E}{=} g, \ E \subset D, E $ имеет предельную точку в $D.$ Тогда $f \overset{D}{=} g.$
 \[\triangleright \text{ Рассмотрим } F = f - g, \ F \in \mathcal{O}(D), F \overset{E}{=} 0\]
 \[\text{Пусть $a$ -- предельная точка } E, a \in D \Rightarrow F(a) = 0 \text{. Тогда $a$ -- неизолированный ноль.} \Rightarrow\]
 \[\Rightarrow \exists U_R(a) \subset D: F = 0 \text{ на } U_R(a)\]
@@ -24,39 +22,34 @@ $f(z) = g \left(\frac{1}{z}\right) = \frac{\tilde{g}\left(\frac{1}{z}\right)}{z^
 \[f \in \mathcal{O}(|z-1|<1), z_n \to \frac{1}{n} \in U_1(0), f \left(\frac{1}{n}\right) = 0 \overset{?}{\Rightarrow} f = \sin \frac{\pi}{z}\]
 \[f \in \mathcal{O}(\mathbb{C}), z_n \to n \in U_1(0), f(n) = 0 \overset{?}{\Rightarrow} f = \sin \pi z\]
 
-\textbfit{Замечание} Теоремы Лагранжа не существует в комплексном анализе
+\textbfit{Замечание} Теоремы Лагранжа не существует в комплексном анализе.
 
 \subsection{Теорема Вейерштрасса}
-\textbfit{Теорема} (Вейерштрасса)
-
-Пусть $f_n \in \mathcal{O}(D)$. Пусть $\forall K \subset D, K$ -- компакт $f_n \overset{K}{\rightrightarrows} f$ (меньше, чем сходимость на всей $D$). Тогда
+\textbfit{Теорема} (Вейерштрасса). Пусть $f_n \in \mathcal{O}(D)$. Пусть $\forall K \subset D, K$ -- компакт $f_n \overset{K}{\rightrightarrows} f$ (меньше, чем сходимость на всей $D$). Тогда
 
 1) $f \in \mathcal{O}(D)$
 
-2) $\forall z \in D \forall k f_n^{(k)}(z) \to f^{(k)}(z)$
+2) $\forall z \in D \ \forall k f_n^{(k)}(z) \to f^{(k)}(z)$
 
 3) $\forall K \subset D, K -$ компакт $f_n^{(k)}(z) \overset{K}{\rightrightarrows} f(z)$
-
 \[\triangleright \ 1) \text{ Покажем } f \in \mathcal{O}(D)\]
 \[f \in C(D) \text{ (т.к. $C(D) \ni f_n \overset{K}{\rightrightarrows} f \Rightarrow f \in C(K) \forall z_0 \in D \exists \overline{U_R(z_0)} \subset{D} \Rightarrow f \in C(\overline{U_R(z_0)}) \Rightarrow$}\]
 \[\Rightarrow f \in C(z_0) \Rightarrow f \in C(D))\]
 \[\text{Пусть } \overline{\triangle} \subset D \int_{\partial \overline{\triangle}} f(z) dz = \int_{\partial \overline{\triangle}} (\lim_{n\to\infty} f_n(z))dz \overset{f_n \overset{\partial \triangle}{\rightrightarrows} f}{=} \lim_{n\to\infty} f_n(z) dz = 0, \ f_n(z) = 0\text{ (л. Гурса)} \Rightarrow\]
 \[f \in \mathcal{O}(D) \text{ по т. Мореры}\]
-\[2) \text{ Пусть $a \in \triangle$. Покажем } \forall k \lim_{n\to\infty} f_n^{k}(a) = f^{(k)}(a)\]
+\[2) \text{ Пусть $a \in \triangle$. Покажем } \forall k \lim_{n\to\infty} f_n^{(k)}(a) = f^{(k)}(a)\]
 \[\exists R > 0: \overline{U_R(a)} \subset D\]
-\[\text{Тогда }f^{(k)}(a) \overset{\text{ИФК}}{=} \frac{k!}{2\pi i} \oint_{|z-a|=R} \frac{f(z)}{(z-a)^{k+1}dz} = \frac{k!}{2\pi i} \oint_{|z-a|=R} \left(\lim_{n\to\infty}\frac{f(z)}{(z-a)^{k+1}}\right)dz = (*)\]
+\[\text{Тогда }f^{(k)}(a) \overset{\text{ИФК}}{=} \frac{k!}{2\pi i} \oint_{|z-a|=R} \frac{f(z)}{(z-a)^{k+1}}dz = \frac{k!}{2\pi i} \oint_{|z-a|=R} \left(\lim_{n\to\infty}\frac{f(z)}{(z-a)^{k+1}}\right)dz = (*)\]
 \[\sup_{|z-a|=R} \left|\frac{f_n(z)}{(z-a)^{k+1}} - \frac{f(z)}{(z-a)^{k+1}}\right| = \frac{1}{R^{k+1}}\sup_{|z-a|=R} |f_n(z)-f(z)|<\epsilon \forall n > N \text{ т.к. } f_n \overset{|z-a|=R}{\rightrightarrows} f\]
-\[(*) \overset{\text{в силу равномерной сходимости}}{=} \lim_{n\to\infty} \frac{k!}{2\pi i} \oint_{|z-a|=R} \frac{f_n(z)}{(z-a)^{k+1}dz} \overset{\text{ИФК}}{=} \lim_{n\to\infty} f_n^{(k)}(a)\]
+\[(*) \overset{\text{в силу равномерной сходимости}}{=} \lim_{n\to\infty} \frac{k!}{2\pi i} \oint_{|z-a|=R} \frac{f_n(z)}{(z-a)^{k+1}}dz \overset{\text{ИФК}}{=} \lim_{n\to\infty} f_n^{(k)}(a)\]
 \[3) \text{ Сначала покажем, что } \forall a \in D \exists R(a): f_n^{(k)} \overset{\overline{U_{R(a)}(a)}}{\rightrightarrows} f^{(k)}(z)\]
 \[\exists r(a) : \overline{U_{r(a)}(a)} \subset D. \text{ Возьмём } 0 < R(a) < r(a).\] 
-\[\text{ Тогда } \forall z \in \overline{U_{R(a)}} \ f_n^{k}(z) - f^{(k)}(z) = \frac{k!}{2\pi i} \oint_{|\zeta-a|=r(a)} \frac{f_n(\zeta)-f(\zeta)}{(\zeta-z)^{k+1}d\zeta}\]
+\[\text{ Тогда } \forall z \in \overline{U_{R(a)}} \ f_n^{(k)}(z) - f^{(k)}(z) = \frac{k!}{2\pi i} \oint_{|\zeta-a|=r(a)} \frac{f_n(\zeta)-f(\zeta)}{(\zeta-z)^{k+1}}d\zeta\]
 \[\sup_{|\zeta-a|=r(a)} \left|\frac{k!}{2\pi i}\oint_{|\zeta-a|=r(a)}\frac{f_n(\zeta)-f(\zeta)}{(\zeta - z)^{k+1}} d\zeta\right| \leq \frac{k!}{2\pi i} \cdot \frac{\epsilon}{(r-R)^{k+1}} \text{ т.е. } \rightrightarrows\]
 \[\forall K \subset D, K \text{ -- компакт. Рассмотрим } \{U_{R(a)}(a)\}_{a \in K} \text{ -- открытое покрытие, выберем конечное}\]
 \[\text{подпокрытие } K \subset \bigcup_{n=1}^N \overline{U_{R_n(a_n)}(a_n)} \text{, т.к. их конечно, то } f_n^{(k)} \overset{\overline{U_{R_n(a_n)}(a_n)}}{\rightrightarrows} f^{(k)} \blacktriangleleft\]
 
-\textbfit{Теорема} (Рунге)
-
-Пусть $D -$ односвязная область. $f \in \mathcal{O}(D)$. Тогда $\exists P_n -$ последовательность многочленов: $\forall F \subset D, K -$ компакт $P_n \overset{K}{\rightrightarrows} f$.
+\textbfit{Теорема} (Рунге). Пусть $D -$ односвязная область. $f \in \mathcal{O}(D)$. Тогда $\exists P_n -$ последовательность многочленов: $\forall F \subset D, K -$ компакт $P_n \overset{K}{\rightrightarrows} f$.
 
 \textbfit{Пр.} $f(z) = \frac{1}{z}, \ \mathbb{C} \setminus \{0\}$
 \[\oint_{|z|=1} P_n(z) dz = 0 \to \oint_{|z|=1} \frac{1}{z} dz = 2\pi i \Rightarrow \nexists P_n\]
