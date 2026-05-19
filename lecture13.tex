@@ -4,11 +4,11 @@
 \[\text{и получим } \frac{1}{f} \in \mathcal{O}(U_{\epsilon'}(a))\]
 \[\frac{1}{f} = (z-a)^N h(z), h(z) \neq 0 \text{ в } U_{\epsilon^{''}}(a)\]
 \[f(z) = \frac{1}{(z-a)^N} \cdot \frac{1}{h}(z) = \frac{1}{(z-a)^N} \sum_{n=0}^\infty b_n (z-a)^n = \left|b_0 \neq 0\right| = \sum_{n=0}^\infty b_n (z-a)^{n-N} =\]
-\[=\sum_{n=N}^\infty b_{n+N} (z-a)^n\]
+\[=\sum_{n=-N}^\infty b_{n+N} (z-a)^n\]
 \[(\Leftarrow) f(z) = \sum_{n=-N}^\infty c_n (z-a)^n = (z-a)^N \sum_{n=-N}^\infty c_n (z-a)^{n+N} = (z-a)^{-N}\sum_{n=0}^\infty c_{n-N}(z-a)^n\]
 \[\sum_{n=0}^\infty c_{n-N}(z-a)^n \in \mathcal{O}(\mathring{U}(a)) \overset{\text{УОТ}}{\Rightarrow} \mathcal{O}(U(a)), (z-a)^{-N} \to \infty \Rightarrow f(z) \to \infty \blacktriangleleft\]
 
-\textbfit{Опр.} Пусть $a -$ плюс $f(z)$. Тогда порядком полюса в т. $a$ называется порядком нуля вункции $\frac{1}{f}$ в т. $a$.
+\textbfit{Опр.} Пусть $a -$ плюс $f(z)$. Тогда порядком полюса в т. $a$ называется порядком нуля функции $\frac{1}{f}$ в т. $a$.
 
 \textbfit{Замечание.} $f(z) = \frac{g(z)}{(z-a)^N} \Leftrightarrow a - $ порядок $N, \ g(z) \neq 0 $ в $\mathring{U}(a)$.
 
@@ -49,7 +49,7 @@
 
 \textbfit{Пр.} $\frac{1}{\sin z}$ в $\mathbb{C}$
 
-\textbfit{Теорема.} Пусть $f$ мероморфна в $\mathbb{C}, \ \infty -$ ИОТ в $f$. Усли $\infty -$ УОТ или полюс, то $f -$ рациональная.
+\textbfit{Теорема.} Пусть $f$ мероморфна в $\mathbb{C}, \ \infty -$ ИОТ в $f$. Если $\infty -$ УОТ или полюс, то $f -$ рациональная.
 \[\triangleright \text{ У $f$ конечно полюсов в } \mathbb{C}, \{a_z, \ldots, a_N\} = M\]
 \[\text{В окрестности }a_k f = \sum_{n=0}^\infty c_{nk}(z-a_k)^n + \sum_{n=-N_k}^{-1} c_{nk}(z-a_k)^n\]
 \[\sum_{n=-N_k}^{-1} c_{nk}(z-a_k)^n = R_k \in \mathcal{O}(\mathbb{C} \setminus \{a_n\})\]
