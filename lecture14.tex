@@ -1,0 +1,62 @@
+\section{Лекция 14. Вычеты. Лемма Жордана}
+
+\textbfit{Опр.} Пусть $a$ -- ИОТ $f$, $f \in \mathcal{O}(\mathring(U)_\epsilon(a))$. Тогда вычетом $f(z)$ в т. $a$ называется число $\underset{a}{\res} f(z) =\frac{1}{2\pi i} \oint_{|z-a|=r} f(z)dz, 0 < r< \epsilon.$
+
+\textbfit{Теорема} (Коши о вычетах). $f \in \mathcal{O}(D\setminus \{a_1, \ldots, a_n\}), \ a_1, \ldots, a_n$ -- ИОТ $f, \ \overline{G} \subset D$ -- ограничена, $\partial G$ состоит из конечного числа замкнутых непересекающихся жордановых кусочно-гладких кривых. Тогда $\oint_{\partial G+} f(z) dz = 2\pi i \sum_{k=1}^n \underset{a_k}{\res} f.$  
+\[\triangleright \text{ Рассмотрим } G \setminus \bigcup_{k=1}^n \overline{U_{\epsilon_k}(a_k)} = \tilde{G}\]
+\[f \in \mathcal{O}(\tilde{G}), \ \oint_{\partial \tilde{G}} f(z)dz = 0, \ \oint_{\partial \tilde{G}} f(z)dz = \oint_{\partial G^+} - \sum \oint_{\partial U_{\epsilon_k}^+(a_k)}\]
+\[\oint_{\partial G^+} f(z) dz = \sum_{k=1}^n \oint_{|z-a_k|=\epsilon_k} f(z) dz = 2\pi i \sum_{k=1}^n \underset{a_k}{\res} f(z) \blacktriangleleft\]
+
+\textbfit{Утв.} ( О связи высета с коэффициентами ряда Лорана). Пусть $a$ -- ИОТ $f(z), \ f \in \mathcal{O}(\mathring{U}_\epsilon(a)), f(z) = \sum_{n=-\infty}^{+\infty} c_n (z-a)^n$ в $\mathring{U}_\epsilon(a)$. Тогда $\underset{a}{\res} f = c_{-1}.$
+\[\triangleright \ \underset{a}{\res} f = \frac{1}{2\pi i} \oint_{|z-a|=r} \sum_{n=-\infty}^{+\infty} c_n(z-a)^n dx \overset{|z-a|=r \text{комп}}{=} \frac{1}{2\pi i} \sum_{n=-\infty}^{+\infty} c_n \oint_{|z-a|=r} (z-a)^n dz = \frac{1}{2\pi i}c_{-1}\cdot 2\pi i \blacktriangleleft\]
+
+\textit{Формулы для вычисления вычетов:}
+
+1) $a$ -- полюс 1-го порядка. $f(z) = \frac{c_{-1}}{z-a} + g(z), \ g(z) \in \mathcal{O}(U_\epsilon(a))$
+\[\lim_{z\to a} f(z)(z-a) = c_{-1} = \underset{a}{\res} f\]
+
+2)  $a$ -- полюс 1-го порядка. $f(z) = \frac{\varphi(z)}{\psi(z)}, \psi(a) = 0, \ \psi'(a) \neq 0, \varphi, \psi \in \mathcal{O(U_\epsilon(a))}$.
+\[\lim_{z\to a} f(z) = \lim_{z \to a} (z-a) \frac{\varphi(z)}{\psi(z) - \psi(a)} = \frac{\varphi(a)}{\psi'(a)} = \underset{a}{\res} f\]
+
+3) $a$ -- полюс порядка $m. \ f(z) = \frac{c_{-m}}{(z-a)^m} + \ldots + \frac{c_{-1}}{z-a} + g(z), \ g(z) \in \mathcal{O}(U_\epsilon(a))$.
+\[\left((z-a)^m f(z)\right)^{(m-1)} = (c_{-1}(m-1)! + (z-a)\tilde{g}(z))\]
+\[\underset{a}{\res f} = \frac{1}{(m-1)!}\lim_{z\to a} \left((z-a)^m f(z)\right)^{(m-1)}\]
+
+\textbfit{Опр.} Пусть $f \in \mathcal{O}(|z| > R).$ Тогда вычетом $f$ в $\infty$ называется число $\underset{\infty}{\res} f = -\frac{1}{2\pi i} \oint_{|z| = \tilde{R}}, \tilde{R} > R.$
+
+\textbfit{Утв.} (О связи вычетов в $\infty$ с коэффициентами ряда Лорана). Если $f \in \mathcal{O}(|z| > R), \ f(z) = \sum_{n=-\infty}^{+\infty} c_n z^n$ в $|z| > R, \ \underset{\infty}{\res} f(z) = -c_{-1}$.
+\[\triangleright \text{Аналогично.} \blacktriangleleft\]
+
+\textit{Формулы для вычетов в $\infty$}
+
+1) $\infty$ -- УОТ. Тогда $f(z) = c_0 + \frac{c_{-1}}{z} + \sum_{n=2}^\infty \frac{c_{-n}}{z^n}.$
+\[\lim_{z\to \infty}f(z) =: f(\infty)\]
+\[\underset{\infty}{\res} f = -\lim_{z\to \infty} z(f(z) - z_0) = \lim_{z\to \infty} (f(\infty) - f(z))\]
+
+2) Связь вычета в $\infty$ и в 0.
+\[g(z) = f\left(\frac{1}{z}\right) = \sum_{n=-\infty}^{+\infty}\frac{c_n}{z^n}, \ |z| < \frac{1}{R}\]
+\[g(z) = \ldots + c_{-1}z + \ldots + \frac{c_1}{z} + \ldots\]
+\[\underset{\infty}{\res} f(z) = - \underset{0}{\res}\frac{g(z)}{z^2}\]
+
+\textbfit{Теорема} (О полной сумме вычетов). Пусть $f \in \mathcal{O}(\mathbb{C} \setminus \{a_1\ldots 1_n\})$. Тогда $\underset{\infty}{\res} f + \sum_{k=1}^n \underset{a_k}{\res} f(z) = 0$.
+\[\triangleright \ \exists R : |a_k| < R \ \forall k=1\ldots n\]
+\[\text{Рассмотрим } D = U_R(0) \setminus \bigcup_{k=1}^n U_\epsilon(a_k)\]
+\[f \in \mathcal{O}(D), f \in \mathcal{O}(|z|> R) \Rightarrow \text{по ИТК } \oint_{\partial D^+} f(z)= 0 = \oint_{|z|=R} - \sum \oint_{|z-a_k|=\epsilon_k}\]
+\[\sum_{k=1}^n 2\pi i\ \underset{a_k}{\res}f = \sum_{k=1}^n \oint_{|z-a_k|=\epsilon_k} f(z) dz = \oint_{|z|=R} f(z) dz = -2\pi i \ \underset{\infty}{\res} f \blacktriangleleft\]
+
+\textbfit{Теорема} (Коши о вычетах для неограниченной области). Пусть $f \in \mathcal{O}(D \setminus \{a_1\ldots a_n\}), \ \overline{G} \subset D, \ a_1\ldots a_n \in G, \ G$ -- неограниченная область, $\partial G$ состоит из конечного числа кусочно-гладких непересекающихся жордановых кривых (собственных кривых).
+Тогда 
+\[\int_{\partial G^+} f(z) dz = \left(\underset{\infty}{\res} f + \sum \underset{a_k}{\res}f\right) \cdot 2\pi i.\]
+\[\triangleright \ \partial G \text{ -- компакт, } \exists R> 0: \partial G \subset \{|z|<R\}, \ \forall k |a_k|<R \Rightarrow f \in \mathcal{O}(|z| > R), f \in \mathcal{O}(G\setminus U_{\epsilon_k}(a_k))\]
+\[\text{Рассмотрим } \tilde{G} = \{|z| < R\} \bigcap G \setminus \bigcup U_{\epsilon_k}(a_k).\]
+\[\tilde{\partial G} = \partial G \bigcap \bigcup_{1}^n \{|z-a_k| = \epsilon_k\} \bigcup |z|=R\]
+\[0 = \oint_{\tilde{\partial G}} f(z) dz = \oint_{\partial G^+} + \oint_{|z|=R} - \sum \oint_{z-a_k|=\epsilon_k} \blacktriangleleft\]
+
+\textbfit{Лемма} (Жордана). Пусть $f \in \mathcal{O}(\im z > 0, |z| > R_0). \ \gamma_R = \{Re^{it}, \ t \in [0, \pi]\}.$ Пусть $M(R) = \sup_{\gamma_R} |f(z)|, \ M(R) \underset{R \to \infty}{\to} 0.$ Тогда $\forall \lambda > 0$
+\[\lim_{R \to \infty} \int_{\gamma_R} f(z) e^{i\lambda z}dz=0\]
+\[\triangleright \ \left|\int_{\gamma_R} f(z) e^{itz}dz\right| \leq \left|\begin{array}{ll}
+    z = R(\cos t + i\sin t) \\
+    \left|e^{i\lambda z}\right| = \left|e^{i\lambda(R\cos t + iR\sin t)}\right| = e^{-\lambda R\sin t}
+\end{array}\right| \leq M(R)\int_0^\pi R e^{-\lambda R\sin t} dt =\]
+\[=2M(R) R \int_0^{\frac{\pi}{2}} e^{-\lambda R\sin t} dt \overset{\sin t \geq \frac{2}{\pi}t}{\leq}2M(R)R\int_0^{\frac{\pi}{2}} e^{-\lambda R \frac{2}{\pi}t}dt = 2M(R)R \left(-\frac{\pi}{2\lambda R}e^{-\lambda R \frac{2}{\pi}t}\right)\Big|_0^{\frac{\pi}{2}} =\]
+\[= 2M(R)R \frac{\pi}{2\lambda R} \left(1-e^{-\lambda R}\right) \to 0 \blacktriangleleft\]
