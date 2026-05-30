@@ -1,0 +1,59 @@
+\section{Лекция 15. Логарифмический вычет. Принцип аргумента. Теорема Руше}
+\textbfit{Утв.} (о полувычете). Пусть $a$ -- полюс 1-го порядка $f(z)$. Пусть $\gamma_\epsilon = \{a+\epsilon e^{it}, \ t \in [0, \pi]\}$. Тогда $\lim_{\epsilon \to 0} \int_{\gamma_\epsilon} f(z) dz = \pi i \underset{a}{\res} f$.
+\[\triangleright \ f(z) = \frac{\underset{a}{\res f}}{z-a} + g(z), \ g \in \mathcal{O}(U_\epsilon(a))\]
+\[\int_{\gamma_\epsilon} \frac{\underset{a}{\res f}}{z-a} dz + \int_{\gamma_\epsilon} g(z) dz \to \pi i \underset{a}{\res} f(z)\]
+\[\int_{\gamma_\epsilon} \frac{\underset{a}{\res f}}{z-a} dz = \underset{a}{\res} f \cdot \pi i\]
+\[\left|\int_{\gamma_\epsilon} g(z) dz\right| \leq \sup_{|z-a|\leq 1} |g|\cdot \pi \epsilon \to 0 \blacktriangleleft\]
+
+\textbfit{Опр.} Пусть $f \in \mathcal{O}(\mathring{U}_\epsilon(a)), f \neq 0 \text{ в } \mathring{U}_\epsilon(a)$.
+Тогда логарифмическим вычетом $f$ в т. $a$ называется $\underset{a}{\res} \frac{f'}{f} = \frac{1}{2\pi i} \in_{|z-a|=r} \frac{f'(z)}{f(z)}dz, \ 0<r<\epsilon.$
+
+\textbfit{Утв.} Пусть $f \in \mathcal{O}(\mathring{U}_\epsilon(a)), f \neq 0 $ в $\mathring{U}_\epsilon(a).$ Тогда 
+
+1) если у $f$ ноль порядка $n$ в т. $a$, то $\underset{a}{\res} \frac{f'}{f} = n;$
+
+2) если -//- полюс -//-, то $\underset{a}{\res} \frac{f'}{f} = n.$
+
+\[\triangleright \ 1) \ f(z) = (z-a)^n g(z), \ g(z) \neq 0\]
+\[\frac{f'}{f} = \frac{n(z-a)^{n-1}g(z) + (z-a)^n g'(z)}{(z-a)^n g(z)}=\frac{n}{z-a} + \frac{g'(z)}{g(z)}\]
+\[\underset{a}{\res} \frac{f'}{f} = \underset{a}{\res} \frac{n}{z-a} = n\]
+\[2) \text{ Пусть у $f$ -- полюс порядка n. Тогда рассмотрим } g(z) = \frac{1}{f(z)} \text{ -- ноль порядка n}\]
+\[\frac{g'(z)}{g(z)} = -\frac{f'(z)f(z)}{f^2(z)} = -\frac{f'(z)}{f(z)} \Rightarrow \underset{a}{\res} \frac{f'}{f} = -\underset{a}{\res} \frac{g'}{g} = n \blacktriangleleft\]
+
+\textbfit{Теорема.} Пусть $f$ -- мероморфна в $D, \overline{G} \subset D, \ G\text{ ограниченная, }\partial G$ состоит из конечного числа непересекающихся жордановых кусочно-гладких кривых. $f$ не имеет на $\partial G$ нулей и полюсов. 
+Тогда $\frac{1}{2\pi i} \oint_{\partial. G^+} \frac{f'(z)}{f(z)} = N(f, G) - P(f, G), \ N \text{ -- количество нулей в $G$ с учётом кратности},$ $P$ -- число полюсов в $G$ с учётом кратности.
+\[\triangleright \text{ Заметим, что в $G$ конечно нулей и полюсов. Пусть $\{a_k\}_{k=1}^N$ -- нули и полюса $f$. Других}\]
+\[\text{ИОТ в $G$ у $\frac{f'}{f}$ нет. Тогда применяем т. Коши о вычетах:}\]
+\[\frac{1}{2\pi i} \oint_{\partial G^+} \frac{f'}{f}dz = \sum_{k=1}^n \underset{a}{\res} \frac{f'}{f} \overset{\text{Утв}}{=} N(f, G) - P(f, G) \blacktriangleleft\]
+
+\textbfit{Теорема} (о существовании функции аргумента). Пусть $\Gamma:[a, b] \to \mathbb{C} \setminus\{0\}$. Тогда $\exists \Phi: [a, b] \to \mathbb{R}, \ \Phi \in C[a, b], \ \forall t \ \Phi(t) \in Arg \ \Gamma(t).$
+Причём, если $\Phi_1, \ \Phi_2$ -- функции аргумента, то $\Phi_1(t) - \Phi_2(t) \equiv 2\pi k \text{ на } [a, b].$
+
+\textbfit{Опр.} Пусть $\Gamma:[a, b]\to \mathbb{C}\setminus\{0\}, \ \Phi$ -- функция аргумента на $\Gamma.$ Тогда приращением аргумента вдоль пути $\Gamma$ называется $\Delta_\Gamma \arg z = \Phi(b) - \Phi(a).$
+
+\textbfit{Опр.} Пусть $\Gamma:[a, b]\to \mathbb{C}, \ f:\Gamma([a, b])\to \mathbb{C}\setminus\{0\}.$ Тогда $f \circ \Gamma : [a, ] \to \mathbb{C}\setminus \{0\}$. Изменением аргумента $f(z)$ вдоль пути $\Gamma$ называется $\Delta_\Gamma \arg f(z) := \Delta_{f \circ \Gamma} \arg z.$
+
+\textbfit{Опр.} Пусть $\Gamma:[a, b] \to \mathbb{C}\setminus\{0\}$ -- замкнутый путь. Тогда индексом пути называется $ind_0 \Gamma = \frac{1}{2\pi} \Delta_{\Gamma} \arg z.$
+
+\textbfit{Теорема.} Пусть $\Gamma:[a, b]\to \mathbb{C}\setminus\{0\}, \ \Gamma$ -- кусочно-гладкий. Тогда $\im \int_\Gamma \frac{1}{z} dz = \Delta_\Gamma \arg z.$
+Если $\Gamma$ -- замкнута, то $\int_\Gamma \frac{1}{z} dz = \Delta_\Gamma \arg z.$
+\[\triangleright \text{ Т.к. $\Gamma([a, b])$ -- компакт, то } \min_{t\in[a, b]}|\Gamma(t)| = \delta > 0. \text{Тогда } \forall t \text{ в } U_\delta(\Gamma_t) \exists \text{ первообразная } \frac{1}{z}.\]
+\[\text{Т.к. } \Gamma \in C[a, b], \text{ то она равномерно непрерывна } \Rightarrow \exists \delta': \ \forall t_1, t_2 \ |t_1-t_2| < \delta' \Rightarrow \left|\Gamma(t_1)-\Gamma(t_2)\right| < \delta.\]
+\[\text{Выберем на $[a, b]$ разбиения } T: d(T) <\delta'. \text{ Тогда } \Gamma(t_k) \in U_\delta(\Gamma(t_{k-1})) \text{. В каждом $U_\delta(\Gamma_{t_k}) $}\]
+\[\text{выберем первообразн. } \frac{1}{z} F_k(z): \ F_{k-1}(\Gamma(t_{}k)) = F_k(\Gamma(t_k))\]
+\[\text{Тогда } \int_\Gamma \frac{1}{z} dz = \sum_{n=0}^{n-1} \int_{\Gamma_k = \Gamma([t_k, t_{k+1}])} \frac{1}{z} dz \overset{\text{Н-Л}}{=} \sum_{k=0}^{n-1} F_k(\Gamma(t_{k-1})) - F_k(\Gamma(t_k)) = F_{n-1}(\Gamma(b)) - F_0(\Gamma(a))\]
+\[F_k \in \{\Ln z + C\}, \ F_k \in \mathcal{O}(U_\delta(\Gamma(t_k)))\]
+\[F_k = \ln |z| + i\arg z + C \Rightarrow \arg z \in C(U_\delta(\Gamma(t_k))), \ \arg z = \im F_k(z)\]
+\[\Phi(t) = \arg \Gamma(t) \in C([t_{k-1}, t_k])\]
+\[\Rightarrow \text{ построили } \Phi \in C[a, b] \text{ -- функция аргумента}\]
+\[\text{Тогда } \int_\Gamma \frac{1}{z} dz = \ln \left|\Gamma(b)\right| + i\Phi(b) - \ln \left|\Gamma(a)\right|-i\Phi(a) = \ln\left|\frac{\Gamma(b)}{\Gamma(a)}\right| + i\Delta_\Gamma \arg z \blacktriangleleft\]
+
+\textbfit{Теорема} (принцип аргумента). Пусть $f$ мероморфна в $D, \ \partial G$ -- кусочно-гладкая замкнутая жорданова кривая, $G$ ограниченная область, $\overline{G} \subset D.$ $f$ не имеет нулей и полюсов на $\partial G$. Тогда $N(f, G) - P(f, G) = \frac{1}{2\pi } \Delta_\Gamma \arg f(z).$
+\[\triangleright N(f, G) - P(f, G) = \int_{\partial G^+} \frac{f'(z)}{f(z)} dz = \left|\begin{array}{ll}
+    \Gamma(t) \text{ -- параметризация } \partial G^+ \\
+    t \in [a, b]
+\end{array}\right| = \int_a^b \frac{f'(\Gamma(t))}{f(\Gamma(t))} \dot{\Gamma(t)}dt =\] 
+\[=\left|\begin{array}{ll}
+    \dot{(f\circ \Gamma)}(t) = f'(\Gamma(t)) \dot{\Gamma}(t \\
+    t \in [a, b])
+\end{array}\right| = \int_{f(\Gamma)} \frac{1}{w} dx \overset{f(\Gamma)\text{ -- замкнут}}{=} \frac{1}{2\pi i} \cdot i \Delta_{f\circ \Gamma} \arg w = \frac{1}{2\pi} \Delta_\Gamma \arg f(z) \blacktriangleleft\]
