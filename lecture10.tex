@@ -1,0 +1,81 @@
+\section{Лекция 10. Бесконечная дифференцируемость голоморфных функций. ИФК для производных. 3 эквивалентных определения голоморфности. Нули}
+
+\textbfit{Теорема} (о голоморфности суммы степенного ряда). Пусть $f(z) = \sum_{n=0}^\infty c_n(z-a)^n, \ R > 0$ -- радиус сходимости. Тогда $f \in \mathcal{O}(U_R(a))$, причём $f'(z) = \sum_{n=1}^\infty c_n \cdot n(z-a)^{n-1}$.
+\[\triangleright \ 1) \ g(z) = \sum_{n=1}^\infty c_n \cdot n (z-a)^{n-1}, \text{ тот же радиус сходимости } R\]
+\[\text{По т. о $\exists$ первообразной в круге: } \begin{array}{ll}
+    1) \ g(z) \in C(U_R(a)) \\
+    2) \ \int_{\partial \triangle} g(z) dz = 0
+\end{array}\Big| \Rightarrow \exists \text{ первообразная } g(z) \text{ в } U_{R}(a)\]
+\[\text{Проверим условия: } 1) \ \forall z_0 \in U_R(a) \ z_0 \in U_r(a): \ r < R, \ \overline{U_r}(a) \subset U_R(a), \text{ ряд сходится } \overset{\overline{U_r}(a)}{\rightrightarrows}\]
+\[\Rightarrow g(z) \in C(\overline{U_r}(a)) \Rightarrow g(z) \in C(z_0) \ \forall z \in U_R(a) \Rightarrow g \in C(U_R(a))\]
+\[2) \ \int_{\partial \triangle} g(z) dz = \int_{\partial \triangle} \sum_{n=1}^\infty c_n\cdot n (z-a)^{n-1}dz \overset{\text{ряд } \overset{\partial \triangle}{\rightrightarrows}}{=} \sum_{n=1}^\infty \int_{\partial \triangle} c_n \cdot n (z-a)^{n-1} dz = 0\]
+\[\Rightarrow \exists \ f_0 \text{ -- первообразная $g$ в } U_R(a)\]
+\[f_0(z) = \int_{[a, z]} g(\zeta) d\zeta = \int_{[a, z]} \left(\sum_{n=1}^\infty c_n \cdot n(\zeta-a)^{n-1}\right)d\zeta = \sum_{n=1}^\infty \int_{[a, z]} c_n \cdot n (\zeta - a)^{n-1}d\zeta =\] 
+\[=\sum_{n=1}^\infty c_n (\zeta - a)^n \Big|_a^z = \sum_{n=1}^\infty c_n(z-a)^n = f(z) - c_0\]
+\[f_0(z) \text{ -- первообразная } \Rightarrow f \in \mathcal{O}(U_R(a))\Rightarrow f(z) = f_0(z) + c_0 \in \mathcal{O}(U_R(a)), \ f'(z) = g(z) \ \blacktriangleleft\]
+
+\subsection{Бесконечная дифференцируемость голоморфных функций}
+\textbfit{Теорема} (о бесконечной дифференцируемости голоморфной функции). Пусть $f \in \mathcal{O}(D).$ Тогда $\forall n \in \mathbb{N} \ \exists f^{(n)}$ в $D$, причём $f^{(n)}\in \mathcal{O}(D)$ и $\forall a \in D$ ряд Тейлора для $f^{(n)}$ с центром в т. $a$ получается дифференцированием соответственного ряда для $f$.
+\[\triangleright \ f \in \mathcal{O}(U_R(a)) \overset{\text{по т. Тейлора}}{\Rightarrow} f(z) = \sum_{n=0}^\infty c_n(z-a)^n \text{ в } U_R(a) \Rightarrow \text{ по т. о голоморфности суммы }\]
+\[\text{степенного ряда } f'(z) = \sum_{n=1}^\infty c_n \cdot n (z-a)^{n-1} \text{ в } U_R(a) \Rightarrow f' \in \mathcal{O}(U_R(a)) \ \blacktriangleleft\]
+
+\textbfit{Следствие} (о виде коэффициентов Тейлора). $c_n = \frac{f^{(n)}(a)}{n!}$
+\[\triangleright \ f \in \mathcal{O}(U_R(a)) \Rightarrow f^{(n)} \in \mathcal{O}(U_R(a)) \text{ и }\]
+\[\forall z \in U_R(a) \ f^{(n)}(z) = \sum_{k=n}^\infty c_k \cdot k \cdot (k-1) \cdot \ldots \cdot (k-n+1)(z-a)^{k-n}\]
+\[\text{Подставим } z=a \ f^{(n)}(a) = c_n \cdot n \cdot (n-1) \cdot \ldots \cdot (n-n+1) = n! \ \blacktriangleleft\]
+
+\subsection{ИФК для производных}
+\textbfit{Теорема} (ИФК для производных). Пусть $f \in \mathcal{O}(D), \ G$ -- ограниченная область, $\overline{G} \subset D, \ \partial G$ -- конечное число непересекающихся кусочно-гладких жордановых кривых. Тогда $\forall a \in G \ f^{(n)}(a) = \frac{n!}{2\pi i} \oint_{\partial G^+} \frac{f(z) dz}{(z-a)^{n+1}}$.
+\[1) \ \triangleright \ \forall a \in G \ \exists r \geq 0: \ \overline{U_r(a)} \subset G. \ c_n = \frac{1}{2\pi i} \oint_{(\partial U_r(a))^+} \frac{f(z)}{(z-a)^{n+1}}dz = \frac{f^{(n)}(a)}{n!} \Rightarrow \]
+\[\Rightarrow f^{(n)}(a) = \frac{n!}{2\pi i} \oint_{(\partial U_r(a))^+} \frac{f(z)}{(z-a)^{n+1}}dz\]
+\[2) \ \text{Рассмотрим } G \setminus \overline{U_r}(a). \ \frac{f(z)}{(z-a)^{n+1}} \in \mathcal{O}(G\setminus \overline{U_r}(a)) \overset{\text{ИТК}}{\Rightarrow} \oint_{\partial (G \setminus \overline{U_r}(a))} \frac{f(z)}{(z-a)^{n+1}}dz = 0 =\]
+\[= \oint_{\partial G^+} - \int_{(\partial U_r(a))^+} \Rightarrow f^{(n)}(a) = \frac{n!}{2\pi i} \oint_{\partial G^+} \frac{f(z)}{(z-a)^{n+1}} dz \blacktriangleleft\]
+
+\textbfit{Теорема} (о восстановлении голоморфной функции по вещественной части)
+
+1) Пусть $f \in \mathcal{O}(D), \ u = \re f$. Тогда $u$ -- гармоническая в $D$, т.е. $u \in C^2(D)$ и $\Delta u = u_{xx}+u_{yy} = 0$ в $D$.
+
+2) Пусть $u$ -- гармоническая в $D$, $D$ -- односвязная область. Тогда $\exists !$ с точностью до мнимой константы $f \in \mathcal{O}(D): \ \re f = u$.
+\[\triangleright \ 1) \ f \in C^2(D) \Rightarrow u = \re f \in C^2(D) \overset{\text{К-Р}}{\Rightarrow} \Delta u = 0\]
+\[(u_{xx} + u_{yy} = (v_y)'_x + (-v_x)'_y = v_{yx} - v_{xy}=0, \text{ по т.Шварца, т.к. } v = \im f \in C^2(D))\]
+\[2) \ \text{Хотим } f = u + iv \Rightarrow f' = u_x + iv_x = u_x-iu_y\]
+\[\text{Рассмотрим } g = u_x -iu_y \ (f' \text{обязана иметь такой вид})\]
+\[g \ \mathbb{R}\text{-дифференцируема, т.к. } u \in C^2(D), \text{ и выполнено К-Р, т.к. } (u_x)_x = (-u_y)_y \text{ -- верно, т.к. } \]
+\[u_{xx}+u_{yy} = 0 \text{ в } D, \ (u_x)_y=-(-u_y)_x \text{ -- верно по т. Шварца, т.к. } u \in C^2(D) \Rightarrow g \in \mathcal{O}(D)\]
+\[\text{Т.к. $D$ -- односвязная, то у } g \ \exists \text{ первообразная } f_0\]
+\[f_0(z) = U + iV, \ \text{ но т.к. } f_0' = g, \text{ то } U'_x = u_x, \ U'_y = u_y \text{ в } D \Rightarrow U - u \equiv const\]
+\[\text{Выберем } c = 0. \text{ Тогда } \re f_0 = u, \ f_0 \in \mathcal{O}(D).\]
+\[V'_x = -u_y, \ V'_y = u_x \Rightarrow V \text{ определяется с точностью до константы.} \ \blacktriangleleft\]
+
+\textbfit{Теорема} (Мореры). Пусть функция $f$ удовлетворяет условию трегольника: $f \in C(D), \ \forall \overline{\triangle} \subset D, \ \oint_{\partial \triangle} f(z) dz = 0.$ Тогда $f \in \mathcal{O}(D).$
+\[\triangleright \ \forall a \in D \ \exists R>0: \ U_R(a) \subset D.\] 
+\[\text{Тогда для $f$ в } U_R(a) \text{ выполнено условие $\exists$ первообразной в круге.} \Rightarrow\] 
+\[\Rightarrow \exists F \in \mathcal{O}(U_R(a)) : F' = f \Rightarrow f \in \mathcal{O}(U_R(a)) \text{ по т. о бесконечной дифференцируемости} \Rightarrow\]
+\[\Rightarrow  f \in \mathcal{O}(D) \blacktriangleleft\]
+\subsection{3 эквивалентных определения голоморфности}
+\textbfit{Теорема} (3 эквивалентных определения голоморфности). Следующие утверждения эквивалентны:
+
+1) $\forall a \in D \ \exists R > 0 :$ в $U_R(a)$ выполнено условие Коши-Римана.
+
+2) $f$ аналитична в $D$, т.е. $\forall a \in D \ \exists R > 0: \ f(z) = \sum_{n=0}^\infty c_n(z-a)^n \ \forall z \in U_R(a)$.
+
+3) условие треугольника: $f \in C(D), \ \forall \overline{\triangle} \subset D \ \oint_{\partial \triangle} f(z) dz = 0.$
+\[\triangleright \ (1) \overset{\text{л. Гурса}}{\Rightarrow} (3), \ (3) \overset{\text{т. Мореры}}{\Rightarrow} (1)\]
+\[(1) \overset{\text{т. Тейлора}}{\Rightarrow} (2), \ (2) \overset{\text{т. о голоморфности суммы степенного ряда}}{\Rightarrow} (1) \ \blacktriangleleft\]
+
+\subsection{Нули}
+\textbfit{Теорема} (о поведении функции в окрестности нуля). Пусть $f \in \mathcal{O}(D), \ a \in D, \ f(a) = 0. \ \exists R>0, \exists n \in \mathbb{N} : \ f(z) = (z-a)^n g(z),$ где $g \in \mathcal{O}(U_R(a)), \ g(z) \neq 0$ в $U_R(a)$ (или $\exists R> 0: \ f \equiv 0$ в $U_R(a)$).
+\[\triangleright \ \text{в } U(a) \ f(z) = \sum_{n=0}^\infty c_n (z-a)^n, \ c_0 = f(a) = 0\]
+\[\text{Если } \forall n \ c_n =0, \text{ то } f(z) \equiv 0 \text{ в } U(a).\] 
+\[\text{Иначе положим } N := \inf \{n: c_n \neq 0\}.\] 
+\[\text{Тогда } g(z) := \sum_{n = N}^\infty c_n (z-a)^{n-N} \text{ сходится в том же круге.}\]
+\[g(a) = c_N \neq 0, \ g \in \mathcal{O}(U(a)) \Rightarrow \exists R>0: g(z) \neq 0 \text{ в } U_R(a), \ f(z) = (z-a)^N g(z) \text{ в } U_R(a) \blacktriangleleft\]
+
+\textbfit{Опр.} Пусть $f \in \mathcal{O}(D), \ a \in D, \ f(a) = 0$. Тогда $N = \inf \{n:c_n \neq 0\} = \inf \{n: f^{(n)}(a) \neq 0\}$ называется порядком нуля $f(z)$ в т. $a$.
+
+\textbfit{Утв.} (об изолированности нулей голоморфной функции). Пусть $f \in \mathcal{O}(D), \ f(a) = 0$. Тогда либо $\exists R > 0: f(z) \equiv 0$ в $U_R(a)$, либо $\exists R>0: f(z) \neq 0$ в $\mathring{U_R}(a)$.
+\[\triangleright \text{ Очев. (из пред. факта)} \blacktriangleleft\]
+
+\textbfit{Пр.} $f(z) = \frac{\sin^2 z \cos z}{z}, \ f(0) := 0, \ f \in \mathcal{O}(D).$
+\[\sin z \text{ -- порядок 1} \Rightarrow \sin z = (z-0) g(z), \ g(z) \neq 0\]
+\[f(z) = \frac{z^2 g^2(z) \cos z}{z} = zg^2(z) \cos z, \ g^2(z) \cos z \neq 0 \text{ в некоторой окрестности 0} \Rightarrow \text{порядок 1}\]
