@@ -1,0 +1,73 @@
+\section{Лекция 12. Ряды Лорана}
+\subsection{Ряды Лорана}
+\textbfit{Теорема} (Лорана). Пусть $f \in \mathcal{O}(V), \ V = \{z: r < |z-a|< R\}, \ 0 \leq r < R \leq \infty.$ Тогда $\forall z \in V \ f(z) = \sum_{n=-\infty}^{+\infty} c_n (z-a)^n, \ c_n := \frac{1}{2\pi i} \oint_{|z-a|=\rho} \frac{f(z)}{(z-a)^{n+1}}dz, \ r<\rho<R$, где под сходимостью ряда подразумевается, что сходятся оба ряда  $\sum_{n=0}^\infty c_n(z-a)^n, \ \sum_{n=1}^{\infty}c_{-n} (z-a)^{-n}$.
+ 
+$\sum_{n=0}^\infty c_n(z-a)^n$ -- правильная часть ряда Лорана, $\sum_{n=1}^{\infty}c_{-n} (z-a)^{-n}$ -- главная часть ряда Лорана.
+\[\triangleright \ 1) \text{ Почему $c_n$ не зависят от $\rho$?}\]
+\[\frac{f(z)}{(z-a)^{n+1}} \in \mathcal{O}(\rho_1 < |z-a|<\rho_2), r<\rho_1<\rho_2<R \Rightarrow \oint_{\partial(\rho_1<|z-a|<\rho_2)} \frac{f(z)}{(z-a)^{n+1}}dz = 0 =\]
+\[=\left(\oint_{(|z-a|>\rho_2)^+} - \oint_{(|z-a|<\rho_1)^-}\right)\frac{f(z)}{(z-a)^{n+1}}dz\]
+\[2) \ \text{Фиксируем } z \in V. \text{ Выберем } r<\rho_1< |z-a|<\rho_2<R\]
+\[f(z) \overset{\text{ИФК}}{=} \frac{1}{2\pi i}\oint_{(|\zeta-a|=\rho_2)^+} \frac{f(\zeta)}{\zeta-z}d\zeta - \frac{1}{2\pi i} \oint_{(|\zeta-a|=\rho_1)^+} \frac{f(\zeta)}{\zeta-z}d\zeta = \left|\frac{f(\zeta)}{\zeta-z} =\frac{f(\zeta)}{\zeta-a-(z-a)}\right|=\]
+\[=\frac{1}{2\pi i} \oint_{|\zeta-a|=\rho_2} \frac{f(\zeta)}{\zeta -a}\cdot \frac{d\zeta}{1-\frac{z-a}{\zeta-a}} + \frac{1}{2\pi i} \oint_{|\zeta-a|=\rho_1} \frac{f(\zeta)}{z-a} \cdot \frac{d\zeta}{1-\frac{\zeta - a}{z-a}} =\] 
+\[=\frac{1}{2\pi i} \oint_{|\zeta-a|=\rho_2}\left(\frac{f(\zeta)}{\zeta-a}\sum_{n=0}^\infty \left(\frac{z-a}{\zeta-a}\right)^n \right)d\zeta +\frac{1}{2\pi i}\oint_{|\zeta-a|=\rho_1}\left( \frac{f(\zeta)}{z-a} \sum_{n=0}^\infty \left(\frac{\zeta-a}{z-a}\right)^n \right)d\zeta =\]
+\[=\frac{1}{2\pi i} \oint_{|\zeta-a|=\rho_2} \left(\sum_{n=0}^\infty \frac{f(\zeta)(z-a)^n}{(\zeta-a)^{n+1}}\right)d\zeta+\frac{1}{2\pi i}\oint_{|\zeta-a|=\rho_1} \left(\sum_{n=0}^\infty \frac{f(\zeta)(\zeta-a)^n}{(z-a)^{n+1}}\right)d\zeta = (*)\]
+\[|\zeta-a|=\rho_2:\left|\frac{f(\zeta )(z -a)^n}{(\zeta-a)^{n+1}}\right| \leq \frac{M |z-a|^n}{\rho_2^{n+1}}, \ M = \sup_{|\zeta-a|=\rho_2}f\]
+\[\frac{M}{\rho_2}\sum_{n=0}^\infty \left(\frac{|z-a|}{\rho_2}\right)^n, \ \frac{|z-a|}{\rho_2} < 1 \Rightarrow \text{сходится} \Rightarrow \text{по признаку Вейерштрасса } \rightrightarrows\]
+\[|\zeta-a|=\rho_1:\left|\frac{f(\zeta )(\zeta -a)^n}{(z-a)^{n+1}}\right| \leq \frac{\widetilde{M} \rho_1^n}{|z-a|^{n+1}}, \ \widetilde{M} = \sup_{|\zeta-a|=\rho_1}f\]
+\[\frac{\widetilde{M}}{|z-a|}\sum_{n=0}^\infty \left(\frac{\rho_1}{|z-a|}\right)^n, \ \frac{\rho_1}{|z-a|} < 1 \Rightarrow \text{сходится} \Rightarrow \text{по признаку Вейерштрасса } \rightrightarrows\]
+\[(*) = \sum_{n=0}^\infty \left(\frac{1}{2\pi i} \oint_{|\zeta-a|=\rho_2} \frac{f(\zeta)}{(\zeta-a)^{n+1}} d\zeta \right) (z-a)^n + \sum_{n=0}^\infty \left(\frac{1}{2\pi i}\oint_{|\zeta-a|=\rho_1}\frac{f(\zeta)}{(\zeta-a)^{-n}} d\zeta\right) \times\]
+\[\times (z-a)^{-n-1}\]
+\[c_n = \frac{1}{2\pi i} \oint_{|\zeta-a|=\rho_2} \frac{f(\zeta)}{(\zeta-a)^{n+1}} d\zeta, \ c_{-n-1} = \frac{1}{2\pi i}\oint_{|\zeta-a|=\rho_1}\frac{f(\zeta)}{(\zeta-a)^{-n}} d\zeta \ \blacktriangleleft\]
+
+\textbfit{Теорема} (о сходимости ряда Лорана). $\sum_{n=-\infty}^{+\infty} b_n (z-a)^n.$
+
+$R := \frac{1}{\overline{\lim}_{n\to\infty} \sqrt[n]{|b_n|}}$, $r:= \overline{\lim}_{n\to\infty} \sqrt[n]{|b_{-n}|}.$ Тогда ряд сходится, причём абсолютно в $V = \{r < |z-a| < R\}$, и правильная часть расходится при $|z-a|>R$, а главная часть -- при $|z-a| < r$.
+При этом $\forall K \subset V, \ K$ -- компакт, ряд сходится равномерно, а $f(z) = \sum_{n=-\infty}^{+\infty} b_n (z-a)^n \ f \in \mathcal{O}(V)$ и $b_n = c_n$.
+\[\triangleright \ 1) \ f_1(z) = \sum_{n=0}^\infty b_n (z-a)^n \text{ сходится абсолютно при } |z-a| < R, \text{ расходится при } |z-a| > R.\]
+\[f_1 \in \mathcal{O}(|z-a|< R), \ \sum_{n=0}^\infty b_n (z-a)^n \overset{K}{\rightrightarrows} \text{ по т. Абеля.}\]
+\[f_2(z) = \sum_{n=1}^\infty \frac{b_{-n}}{(z-a)^n} \text{ сходится абсолютно при } \left|\frac{1}{z-a}\right| < \frac{1}{r} \Leftrightarrow |z-a| > r, \ \text{ расходится при}\]
+\[|z-a| < r\]
+\[g(w) = \sum_{1}^\infty b_{-n}w^n \ \forall K \in \{|w| < r\} \overset{K}{\rightrightarrows}\]
+\[K \overset{\frac{1}{w}}{\to} K_1 \text{ -- компакт}, \ \{0\} \notin K, \frac{1}{w} \in C\]
+\[\sup_{w \in K} \left|g(w)-\sum_{n=1}^N b_{-n} w^n\right| = \sup_{z \in K_1} \left|f_2(z) - \sum_{n=1}^\infty b_{-n} (z-a)^{-n}\right| \Rightarrow \sum_{n=1}^\infty b_{-n} (z-a)^{-n} \overset{K}{\rightrightarrows} f_2(z)\]
+\[g \in \mathcal{O}(|w|<\frac{1}{r}), \ f_2 = g\left(\frac{1}{z-a}\right) \in \mathcal{O}(|z-a|>r), \text{ т.к. } |z-a|\neq 0 \Rightarrow \frac{1}{z-a} \in \mathcal{O}(|z-a|>r)\]
+\[2) \ \text{Покажем } !\]
+\[f \in \mathcal{O}(V) \Rightarrow c_n = \frac{1}{2\pi i} \oint_{|\zeta-a|=\rho} \frac{f(\zeta)}{(\zeta-a)^{n+1}}d\zeta = \frac{1}{2\pi i} \oint_{|\zeta-a|=\rho} \frac{1}{(\zeta-a)^{n+1}} \left(\sum_{k=-\infty}^{+\infty} b_k (\zeta-a)^k\right)d\zeta =\] 
+\[=\frac{1}{2\pi i} \oint_{|\zeta-a|=\rho} \left(\sum_{k=-\infty}^{+\infty} b_k (\zeta-a)^{k-n-1}\right)d\zeta = (*)\]
+\[\sum_{k=-\infty}^{+\infty} b_k (\zeta-a)^{k-n-1} \text{ ряд сдвинут на константу членов } \Rightarrow R, r \text{ не изменились } \Rightarrow \overset{V}{\rightrightarrows}\]
+\[(*) = \sum_{k=-\infty}^{+\infty} \frac{b_k}{2\pi i} \oint_{|\zeta-a|=\rho} (\zeta-a)^{k-n-1} d\zeta = \left|\oint_{|\zeta-a|=\rho} (\zeta-a)^{k-n-1} d\zeta = \begin{cases}
+    0, \ k-n-1\neq -1 \\
+    2\pi i, k = n
+\end{cases}\right| =\]
+\[ = b_n \ \blacktriangleleft\]
+
+\textbfit{Утв.} Неравенство Коши (для коэффициентов Лорана). 
+
+$|c_n| \leq \frac{M(\rho)}{\rho^n},$ где $M(\rho) = \sup_{|z-a|=\rho} |f(z)|.$
+\[\triangleright \text{ Аналогично. } \blacktriangleleft\]
+
+\textbfit{Опр.} Точка $a \in \mathbb{C}$ называется изолированной особой точкой однозначного характера (ИОТОХ), если $f \in \mathcal{O}(0 < |z-a| < \epsilon)$ с некоторым $\epsilon > 0$. При этом 
+
+1) если $\exists \lim_{z\to a} f(z) \in \mathbb{C}$, то $a$ -- устранимая ОТ (УОТ)
+
+2) если $\exists \lim_{z\to a} f(z) = \infty$, то $a$ -- полюс
+
+3) если $\nexists \lim_{z\to a} f(z)$, то $a$ -- существенная ОТ (СОТ).
+
+\textbfit{Теорема} (об описании УОТ). Пусть $a$ -- ИОТ $f$. Тогда следующие утверждения эквивалентны:
+
+1) $a$ -- УОТ
+
+2) $f$ -- ограниченная в некоторой $\mathring{U_{\epsilon'}}(a)$
+
+3) $c_n = 0$ при $n \leq -1$
+
+4) $f$ можно доопределить в т. $a$ до голоморфности
+\[\triangleright \ (1) \Rightarrow (2): \text{ если функция имеет предел в т. $a$, то она локально ограничена в этой точке}\]
+\[(2) \Rightarrow (3): \ f \text{ ограничена в } \mathring{U_{\epsilon'}}(a)\]
+\[\text{При } 0 < \rho < \epsilon' \ M(\rho) \leq M \Rightarrow |c_{-n}| \leq \frac{M(\rho)}{\rho^{-n}} = M(\rho)\rho^n \underset{\rho\to 0}{\to} 0 \Rightarrow c_{-n} = 0 \text{ при } n \geq 1\]
+\[(3) \Rightarrow (4): \ \mathring{U_{\epsilon'}}(a) \ f(z) = \sum_{n=0}^\infty c_n (z-a)^n = (*)\]
+\[f(a) := c_0 \Rightarrow (*) \text{ выполнено в } U_{\epsilon'}(a) \Rightarrow f \in \mathcal{O}(U_{\epsilon'}(a))\]
+\[(4) \Rightarrow (1): \ \text{ очев } \blacktriangleleft\]
+
+\textbfit{Замечание.} Радиус сходимости ряда Лорана (Тейлора) равен расстоянию от центра $a$ до ближайшей ОТ (НО не УОТ, т.к. в ней можем доопределить).
