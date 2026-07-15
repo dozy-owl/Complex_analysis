@@ -1,0 +1,74 @@
+\section{Лекция 5. Дробно-линейные отображения (ДЛО)}
+
+\textbfit{Теорема.} Пусть $f: D \to \overline{\mathbb{C}}, D \subset \overline{\mathbb{C}}, \ f$ конформно в $D$. $\partial D = \gamma, f\in C(\overline{D}), f(\gamma) = \tilde{\gamma}, \gamma \ -$ жорданова кривая. $f(\gamma)=\tilde\gamma \ -$ биекция. $\tilde\gamma = \partial G, G \ -$ область, $\exists z_0\in D: f(z_0)\in G.$ Тогда $f(D)=G$.
+\[\triangleright \ \text{По т. Жордана, если $\tilde\gamma$ замкнута, то $\mathbb{C}\setminus \tilde\gamma = G$ -- область, $\tilde\gamma = \partial G$, если $\tilde\gamma$ не замкнута, то}\] 
+\[\mathbb{C} \setminus \tilde\gamma = G \cup G_1, \ G, G_1 \text{ -- области, } \tilde\gamma = \partial G = \partial G_1.\]
+\[\text{Т.к. $f$ -- диффеоморфизм, то $f(D)$ -- область} \Rightarrow f(D) \subset G.\]
+\[\text{Хотим } f(D) = G. \text{ Пусть } G^* = G \setminus f(D).\]
+\[\text{Пусть $G^*$ открыто. Тогда } G = f(D) \cup G^*, \ f(D), G^* \text{ открыты.}\]
+\[\text{Это противоречит линейной связности } G. \text{ Пусть } w_1 \in f(D), w_2 \in G^*.\] 
+\[\exists \Gamma(t) \text{ -- путь: } \Gamma(0) = w_1,\ \Gamma(1) = w_2, \ \Gamma(t) \in G \ \forall t\]
+\[T = \inf \{t: \Gamma(t) \in G^*\}\]
+\[\Gamma \text{ непрерывна } \Rightarrow \exists U_\delta(w_1) \subset f(D) \Rightarrow T >0.\]
+\[\text{Пусть } T = T_0. \Gamma(T_0) = w_0 \in f(D) \text{ или } w_0\in G^* \Rightarrow [T_0 - \delta, T_0 + \delta] \in f(D) \text{ или } \in G^* \Rightarrow \exists T_n:\] 
+\[T_n \to T_0, \Gamma(T_n) \in f(D) \text{ или } \exists T': T' < T_0, \Gamma(T') \in G^* \Rightarrow T \text{ не инфимум} \Rightarrow \nexists T \text{ -- противоре-}\] 
+\[\text{чие }\Rightarrow G^* \text{ не открыто } \Rightarrow \exists w^* \in \partial f(D), w^* \in G, w^* \in G^* \Rightarrow \exists w_n\in f(D): w_n \to w^*,\] 
+\[w_n = f(z_n).\]
+\[\overline{\mathbb{C}} \text{ -- компакт} \Rightarrow \exists z_{n_k} \to z^* \in \overline{D}.\]
+\[\text{Если } z^* \in D \Rightarrow \text{в силу непрерывности } w^* = f(z^*) \Rightarrow w^* \in f(D) \text{ -- противоречие с } w^* \in G^*.\]
+\[\text{Если }z^* \in \partial D \Rightarrow f(z^*) \in \tilde\gamma = \partial G \text{ -- противоречие с } w^* \in G.\]
+\[\text{Значит, } G^* = \varnothing. \blacktriangleleft\]
+
+\textbfit{Утв.} $f(\partial^+(D)) = \partial^+ (f(D))$. (следует из т. Руше).
+\subsection{ДЛО}
+\textbfit{Опр.} Отображение $w(z) = \begin{cases}
+    \frac{az+b}{cz+d}, & a, b, c, d \in \mathbb{C}, \ ad-bc \neq 0 \\
+    \infty, & z = -\frac{d}{c} \\
+    \frac{a}{c}, & z =\infty
+\end{cases}.$
+
+$w: \overline{\mathbb{C}}\to \overline{\mathbb{C}}$ называется ДЛО.
+
+\textbfit{Утв.} $w$ -- гомеоморфизм $\overline{\mathbb{C}}$ на $\overline{\mathbb{C}}$.
+\[\triangleright \text{ Очевидно, что $w^{-1}$ тоже ДЛО.} \blacktriangleleft\]
+
+\textbfit{Утв.} $w$ -- конформное отображение в $\overline{\mathbb{C}}$.
+\[\triangleright \ \text{Биективность уже известна.}\]
+\[w' = \frac{a(cz+d) - c(az+b)}{(cx+d)^2} = \frac{ad-bc}{(cz+d)^2} \neq 0\]
+\[-\frac{d}{c} \to \infty. \text{ Надо исследовать } \frac{1}{w} \text{ в } - \frac{d}{c}.\]
+\[\frac{1}{w} = \frac{cz+d}{az+b}, \ \left(\frac{1}{w}\right)' = \frac{-(ad-bc)}{(az+b)^2} \neq 0\]
+\[\infty \to \frac{a}{c}. \text{ Надо исследовать } w\left(\frac{1}{z}\right) \text{ в } 0.\]
+\[w\left(\frac{1}{z}\right) = \frac{\frac{a}{z}+b}{\frac{c}{z}+d} = \frac{a+bz}{c+dz}, \ w\left(\frac{1}{z}\right)' = \frac{ad-bc}{(c+dz)^2} \neq 0 \blacktriangleleft\]
+
+\textbfit{Утв.} ДЛО - композиция растяжения, сдвига, поворота и $\frac{1}{z}$.
+\[\triangleright \text{ очев } \blacktriangleleft\]
+
+\textbfit{Утв.} $\Lambda$ -- множество всех ДЛО образует группу относительно операции композиции.
+\[\triangleright \text{ очев } \blacktriangleleft\]
+\[\text{Группа ДЛО} \simeq GL(2, \mathbb{C}) / \mathbb{C}^* \simeq SL(2, \mathbb{C}) / \{\pm E\} = PSL(2, \mathbb{C}) = \text{группа Мёбиуса}\]
+
+\textbfit{Теорема} (круговое свойство ДЛО и сохранение симметрии). Пусть $\Gamma$ -- обобщённая окружность (т.е. прямая или окружность). Тогда $\widetilde\Gamma = w(\Gamma)$ тоже обобщённая окружность. Причём, если $z_1, z_2$ симметричны относительно $\Gamma$, то их образы симметричны относительно $\widetilde\Gamma$.
+\[\triangleright \ \text{Для поворотов и сдвигов очевидно.}\]
+\[\text{Для $\lambda z$ очевидно для окружностей с центров в 0 и прямых, проходящих через 0.}\]
+\[\lambda z = \lambda(z - z_0) + \lambda z_0 \Rightarrow \text{сдвигом получим для всех.}\]
+\[\text{Рассмотрим } w = \frac{1}{z}\]
+\[|z-z_0|^2=R^2 \text{ -- уравнение окружности.}\]
+\[(z-z_0)(\overline{z} - \overline{z_0}) = R^2\]
+\[z\overline{z} - z\overline{z_0} - z_0\overline{z}+z_0\overline{z_0}=R^2\]
+\[Az\overline{z}+Bz+\overline{B}\overline{z} + C = 0, \ A, C \in \mathbb{R} \ldots (*)\]
+\[Ax+By+C = 0 \text{ -- уравнение прямой.}\]
+\[x = \frac{z+\overline{z}}{2}, \ y = \frac{z-\overline{z}}{2}\]
+\[\frac{1}{2}(A-iB)z + \frac{1}{2}(A+iB)\overline{z}+C = 0\]
+\[\text{Т.е. $\forall$ обобщённая окружность задаётся } (*).\]
+\[\Gamma \text{ -- обобщённая окружность.}\]
+\[w = \frac{1}{z} \Rightarrow z = \frac{1}{w} \to (*):\]
+\[\frac{A}{w\overline{w}}+\frac{B}{w}+\frac{\overline{B}}{\overline{w}} + C = 0 | \cdot \overline{w}w\]
+\[A+B\overline{w} + \overline{B} w+C\overline{w}w=0 \text{ -- обобщённая окружность.}\]
+\[z_1, z_2 \text{ -- симметричные точки. } |z_1-z_0|=\frac{R^2}{|z_2-z_0|}\]
+\[z_1-z_0 = \frac{R^2}{|z_2-z_0|} \cdot \frac{z_2-z_0}{|z_2-z_0|} = \frac{R^2}{\overline{z_2-z_0}}\]
+\[(z_1-z_0)(\overline{z_2-z_0}) = R^2\]
+\[\text{Т.е. уравнение получается из уравнения окружности } \Gamma \text{ заменой } z = z_1, \overline{z} = z_2.\]
+\[\text{Прямые: } \re z =0, \ z+\overline{z} = 0\]
+\[\text{Симметричные точки: } z_1+\overline{z_2}=0 \text{ выполняется.}\]
+\[\text{Аналогично поворотом и сдвигом переведём } \re z \text{ в любую прямую.}\]
+\[\text{Подставим в уравнение } (*) \ w_1=\frac{1}{z_1}, w_2=\frac{1}{z_2} \text{ и получим, что образы симметричны.} \blacktriangleleft\]
