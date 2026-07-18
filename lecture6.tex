@@ -1,0 +1,98 @@
+\section{Лекция 6. ДЛО. Правило 3-х точек. Интегралы}
+\subsection{Правило 3-х точек}
+\textbfit{Теорема} (Правило 3-х точек). Пусть $z_1, z_2, z_3, w_1, w_2, w_3 \in \mathbb{C}$. Тогда $\exists ! w(z)$ -- ДЛО: $w(z_i)=w_i$.
+\[\triangleright \ 1) \ z_1, z_2, z_3 \in \mathbb{C}, w_i \in \mathbb{C}\]
+\[f_1: z_1 \to 0, \ z_2 \to \infty, \ z_3 \to 1\]
+\[f_1(z) = \frac{z-z_1}{z-z_2} : \frac{z_3-z_1}{z_3-z_2}\]
+\[f_2: w_1 \to 0, \ w_2 \to \infty, \ w_3 \to 1\]
+\[f = f_2^{-1} \circ f_1 \Leftrightarrow f_2(w(z)) = f_1(z)\]
+\[\frac{w(z)-w_1}{w(z)-w_2} : \frac{w_3-w_1}{w_3-w_2} = \frac{z-z_1}{z-z_2} : \frac{z_3-z_1}{z_3-z_2}\]
+\[2) \text{ Пусть $\tilde{f}$ -- ДЛО } \tilde{f}(z_i)=w_i\]
+\[f_2 \circ \tilde{f} \circ f_1^{-1}: 0 \to 0, 1 \to 1, \infty \to \infty\]
+\[f_2 \circ \tilde{f} \circ f_1^{-1} \text{ -- ДЛО как композиция.}\]
+\[\infty \overset{f_2 \circ \tilde{f} \circ f_1^{-1}}{\to} \infty \Rightarrow f \text{ -- линейное, } f(z) = Az+B\]
+\[0 \overset{f_2 \circ \tilde{f} \circ f_1^{-1}}{\to} 0 \Rightarrow B = 0\]
+\[1 \overset{f_2 \circ \tilde{f} \circ f_1^{-1}}{\to} 1 \Rightarrow A = 1\]
+\[\Rightarrow f(z) = z \Rightarrow f_2 \circ \tilde{f} \circ f_1^{-1} = id \]
+\[\tilde{f} = f_2^{-1} \circ f_1 = w \text{, т.е. отображение } !\]
+\[\text{В остальных случаях ($z_1, z_2$ или $z_3$ бесконечность) меняется вид }f_1, f_2 \text{, но они явно выпи-}\]\[\text{сываются.} \blacktriangleleft\]
+
+\textbfit{Опр.} ДЛА -- дробно-линейные автоморфизмы, т.е. $w:D \to D$ сюръективно.
+
+1) ДЛО -- ДЛА $\overline{\mathbb{C}}$
+
+2) Линейные -- ДЛА $\mathbb{C}$
+
+3) ДЛА единичного круга ($|z|<1$):
+\[\text{Пусть } w(a) = 0, |a|<1 \Rightarrow w(z) = \frac{z-a}{...}\]
+\[a^* \text{ -- симметричная } \Rightarrow w(a^*)=\infty \Rightarrow w(z) = \frac{z-a}{z-a^*} \cdot k\]
+\[a^* = \frac{a}{|a|^2} = \frac{1}{\overline{a}}\]
+\[w(z) = \frac{z-a}{z-\frac{1}{\overline{a}}}\cdot k = k\overline{a} \cdot \frac{z-a}{z\overline{a}-1} = \tilde{k}\cdot \frac{z-a}{z\overline{a}-1} \text{. Переводит единичную окружность в какую-то}\]
+\[\text{окружность с центром в 0.}\]
+\[|z|=1 \Rightarrow |w(z)|=1\]
+\[|w(z)|=|\tilde{k}| \frac{|z-a|}{|z\overline{a}-1|} = \left|: |\overline{z}|=1\right| =|\tilde{k}| \frac{|z-a|}{|\overline{z}| |z\overline{a}-1|}=|\tilde{k}|\frac{|z-a|}{|z\overline{z}\overline{a}-\overline{z}|}=|\tilde{k}|\frac{|z-a|}{|\overline{a}-\overline{z}|}=|\tilde{k}| \Rightarrow\] 
+\[\Rightarrow \tilde{k} =e^{i\varphi}\]
+\[w(z) = e^{i\varphi} \frac{z-a}{z\overline{a}-1} \text{ -- ДЛА } \{|z|<1\}.\]
+
+\subsection{Интегралы}
+\textbfit{Опр.} Пусть $\Gamma:[a, b] \to \mathbb{C}$ -- гладкий путь, $\gamma = \Gamma([a, b]), \ f: \gamma \to \mathbb{C}, \ f \in C(\gamma).$ Тогда интегралом $f$ по пути $\Gamma$ называется число 
+\[\int_\Gamma f(z) dz := \int_a^b f(\Gamma(t))\cdot \dot{\Gamma(t)}dt = \left| \begin{array}{ll}
+    \Gamma(t) = x(t) +iy(t) \\
+    f(z) = f(x, y) = u(x, y) + iv(x, y)    
+\end{array} \right| =\] 
+\[=\int_a^b (u(x(t), y(t)) + iv(x(t), y(t))) \cdot (\dot{x(t)} + i\dot{y(t)})dt = \int_a^b (u(\Gamma(t)) \dot{x}(t)-v(\Gamma(t))\dot{y}(t))dt +\] 
+\[+i\int_a^b (u(\Gamma(t))\dot{y(t)}+v(\Gamma(t))\dot{x(t)})dt.\]
+
+\textbfit{Опр.} $\Gamma$ -- кусочно-гладкий путь, $[a, b] = \bigcup [a_k, b_k], \ \Gamma\Big|_{[a_k, b_k]}$ -- гладкий путь. Тогда $\int_\Gamma f(z) dz = \sum \int_{\Gamma_k}f(z) dz$.
+
+\textbfit{Опр.} Пусть $\gamma$ -- гладкая кривая и на ней выбрана ориентация, т.е. параметризация ($\gamma_{AB}$ и $\gamma_{BA}$, $\gamma^+$ и $\gamma^-$). Тогда интегралом по кривой $\gamma$ с указанным направлением называется $\int_{\gamma_{AB}} := \int_\Gamma f(z) dz.$
+
+\textbfit{Пр.} $|z|=1$, ориентация $\gamma^+$, параметризация $\Gamma(t) = e^{it}, \ t \in [0, 2\pi], \ \dot{\Gamma}(t) = -\sin t + i\cos t = ie^{it}$.
+\[\oint_{(|z|=1)^+} z^n dz = \int_{\Gamma} z^n dz = \int_{0}^{2\pi} e^{int}\cdot ie^{it}dt = i\int_0^{2\pi} (\cos (n+1)t + i \sin (n+1)t) dt =\] 
+\[=\left[ \begin{array}{ll}
+    0, & n \neq -1\\
+    2\pi i, & n = -1    
+\end{array}\right., n \in \mathbb{Z}\]
+
+\textbfit{Утв.} Свойства интегралов:
+
+1) линейность
+\[\int_\Gamma (\alpha f(z) + \beta g(z))dz = \alpha \int_\Gamma f(z)dz+\beta\int_\Gamma g(z) dz\]
+
+2) аддитивность по пути
+\[\Gamma_1: [a, b] \to \mathbb{C}, \ \Gamma_2 : [b, c] \to \mathbb{C}, \ \Gamma_1(b) = \Gamma_2(b)\]
+\[\Gamma:[a, c] \to \mathbb{C}, \ \Gamma(t) = \begin{cases}
+    \Gamma_1(t), & t \in [a, b] \\
+    \Gamma_2(t), & t \in [b, c]
+\end{cases}\]
+\[\int_\Gamma f(z) dz = \int_{\Gamma_1} f(z) dz + \int_{\Gamma_2} f(z) dz\]
+
+3) независимость от параметризации
+\[\text{Пусть } \Gamma_1 \text{ и } \Gamma_2 \text{ -- эквивалентные гладкие пути. Тогда } \int_{\Gamma_1} f(z) dz = \int_{\Gamma_2} f(z) dz\]
+\[\triangleright \ \exists g \in C^1[a, b], \ g:[a, b] \to [a_1, b_1]\]
+\[\Gamma_1[a, b] \to \mathbb{C}, \ \Gamma_2:[a_1, b_1] \to \mathbb{C}\]
+\[g'(x) > 0, \ g(a) = a_1, \ g(b) =b_1, \ \Gamma_2(g(t)) = \Gamma_1(t)\]
+\[\int_{\Gamma_1} f(z) dz = \int_{a_1}^{b_1} f(\Gamma_2(t))\dot{\Gamma_2(t)}dt = \left|\begin{array}{ll}
+    t = g(\tau) \\
+    dt = \dot{g(\tau) d\tau}    
+\end{array}\right| = \int_{a}^{b} f(\Gamma_2(g(\tau))) (\Gamma_2(g(\tau)))'_t g'_t(\tau) d\tau =\]
+\[= \int_a^b f(\Gamma_1(\tau)) \dot{\Gamma_1(\tau)}d\tau=\int_{\Gamma_1}f(z)dz \blacktriangleleft\]
+
+4) зависимость от ориентации
+\[\text{Пусть } \Gamma:[a, b] \to \mathbb{C}, \ \Gamma^{-1}:[a, b] \to \mathbb{C}, \ \Gamma^{-1}(t) = \Gamma(a+b-t).\]
+\[\text{Тогда } \int_\Gamma f(z) dz = -\int_{\Gamma^{-1}}f(z) dz\]
+\[\triangleright \ \int_{\Gamma^{-1}}f(z) dz = \int_a^b f(\Gamma^{-1}(t))\dot{\Gamma}^{-1}(t) dt = \left|\begin{array}{ll}
+    \tau = a+b-t \\
+    d\tau = -dt    
+\end{array}\right| =\] 
+\[=\int_a^b f(\Gamma^{-1}(a+b-\tau))\dot{\Gamma}^{-1}(a+b-\tau)d\tau = -\int_{\Gamma}f(z)dz \blacktriangleleft\]
+
+5) оценка
+\[\left|\int_{\Gamma} f(z) dz\right| \leq \int_a^b \left|f(\Gamma(t))\right| \cdot \left|\dot{\Gamma(t)}\right| dt \leq M \left|\Gamma\right| = M\int_a^b \sqrt{\dot{x}^2+\dot{y}^2}dt, \ M = \sup_{z \in \gamma} |f(z)|\]
+\[\triangleright \ \text{Пусть } J = \int_\Gamma {f(z)}dz = |J| \cdot e^{i\theta}\]
+\[|J| = J\cdot e^{-i\theta} = \int_{\Gamma}e^{-i\theta} f(z) dz = \int_a^b \re (e^{-i\theta}f(\Gamma(t))\dot{\Gamma(t)})dt \leq \int_a^b \left|e^{-i\theta} f(\Gamma(t))\dot{\Gamma(t)}\right|dt \leq\]
+\[\leq M \int_a^b \left|\dot{\Gamma(t)}\right|dt = M \int_a^b \sqrt{\dot{x}^2+\dot{y}^2}dt = M \left|\Gamma\right| \blacktriangleleft\]
+\[\textbfit{Пр.} \int_a^b \dot{\Gamma(t)}dt = \Gamma(b) - \Gamma(a)\]
+\[\int_\Gamma z^n dz = \int_a^b (\Gamma(t))^n \cdot \dot{\Gamma(t)}dt = \frac{1}{n+1} \int \frac{d}{dt} \left(\Gamma(t)\right)^{n+1}dt = \frac{\left(\Gamma(b)\right)^{n+1}-\left(\Gamma(a)\right)^{n+1}}{n+1}, \ n\neq -1\]
+\[d(z^n \circ \Gamma) = d(z^n)\Big|_{\Gamma(t)} \circ d(\Gamma) = n z^{n-1}\Big|_{\Gamma(t)}\cdot \dot{\Gamma(t)}\]
+\[\Rightarrow \text{интеграл $z^n, \ n \neq -1$ по любому замкнутому пути равен 0}\]
