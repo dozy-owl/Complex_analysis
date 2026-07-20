@@ -1,61 +1,62 @@
 \section{Лекция 13. Связь ряда Лорана с типом ИОТ. Целые и мероморфные функции}
-\textbfit{Теорема} Пусть $f \in \mathring{U}_{\epsilon}(a), a -$ полюс $\Leftrightarrow f(z) = \sum_{-N}^{+\infty} c_n(z-a)^n, N >0$
-\[\triangleright (\Rightarrow) \lim_{z\to a} f(z) = \infty. \ \frac{1}{f(z)} \in \mathcal{O}(\mathring{U}_{\epsilon'}(a)), \ \lim_{z\to a} \frac{1}{f(z)} = 0 \Rightarrow a - \text{Уот для $\frac{1}{f}$, доопределим в $a$}\]
+\subsection{Связь ряда Лорана с типом ИОТ}
+\textbfit{Теорема} Пусть $f \in \mathring{U}_{\epsilon}(a), a$ -- полюс $\Leftrightarrow f(z) = \sum_{-N}^{+\infty} c_n(z-a)^n, N >0$
+\[\triangleright (\Rightarrow) \lim_{z\to a} f(z) = \infty. \ \frac{1}{f(z)} \in \mathcal{O}(\mathring{U}_{\epsilon'}(a)), \ \lim_{z\to a} \frac{1}{f(z)} = 0 \Rightarrow a - \text{УОТ для $\frac{1}{f}$, доопределим в $a$}\]
 \[\text{и получим } \frac{1}{f} \in \mathcal{O}(U_{\epsilon'}(a))\]
-\[\frac{1}{f} = (z-a)^N h(z), h(z) \neq 0 \text{ в } U_{\epsilon^{''}}(a)\]
+\[\frac{1}{f} = (z-a)^{N} h(z), h(z) \neq 0 \text{ в } U_{\epsilon^{''}}(a)\]
 \[f(z) = \frac{1}{(z-a)^N} \cdot \frac{1}{h}(z) = \frac{1}{(z-a)^N} \sum_{n=0}^\infty b_n (z-a)^n = \left|b_0 \neq 0\right| = \sum_{n=0}^\infty b_n (z-a)^{n-N} =\]
 \[=\sum_{n=-N}^\infty b_{n+N} (z-a)^n\]
-\[(\Leftarrow) f(z) = \sum_{n=-N}^\infty c_n (z-a)^n = (z-a)^N \sum_{n=-N}^\infty c_n (z-a)^{n+N} = (z-a)^{-N}\sum_{n=0}^\infty c_{n-N}(z-a)^n\]
+\[(\Leftarrow) f(z) = \sum_{n=-N}^\infty c_n (z-a)^n = (z-a)^{-N} \sum_{n=-N}^\infty c_n (z-a)^{n+N} = (z-a)^{-N}\sum_{n=0}^\infty c_{n-N}(z-a)^n\]
 \[\sum_{n=0}^\infty c_{n-N}(z-a)^n \in \mathcal{O}(\mathring{U}(a)) \overset{\text{УОТ}}{\Rightarrow} \mathcal{O}(U(a)), (z-a)^{-N} \to \infty \Rightarrow f(z) \to \infty \blacktriangleleft\]
 
-\textbfit{Опр.} Пусть $a -$ плюс $f(z)$. Тогда порядком полюса в т. $a$ называется порядком нуля функции $\frac{1}{f}$ в т. $a$.
+\textbfit{Опр.} Пусть $a$ -- плюс $f(z)$. Тогда порядком полюса в т. $a$ называется порядком нуля функции $\frac{1}{f}$ в т. $a$.
 
 \textbfit{Замечание.} $f(z) = \frac{g(z)}{(z-a)^N} \Leftrightarrow a - $ порядок $N, \ g(z) \neq 0 $ в $\mathring{U}(a)$.
 
-\textbfit{Следствие.} $a -$ СОТ $f \Leftrightarrow$ в главное части ряда Лорана $f$ в $\mathring{U}_\epsilon(a)$ бесконечно много ненулевых слагаемых.
+\textbfit{Следствие.} $a$ -- СОТ $f \Leftrightarrow$ в главной части ряда Лорана $f$ в $\mathring{U}_\epsilon(a)$ бесконечно много ненулевых слагаемых.
 
-\textbfit{Теорема} (Соходского). Пусть $a -$ СОТ функции $f(z)$. Тогда $\forall A \in \overline{\mathbb{C}} \ \exists z_n \to a: f(z_n) \to A.$
+\textbfit{Теорема} (Соходского). Пусть $a$ -- СОТ функции $f(z)$. Тогда $\forall A \in \overline{\mathbb{C}} \ \exists z_n \to a: f(z_n) \to A.$
 \[\triangleright 1) A = \infty. \text{ Пусть $f$ ограничена в некоторой $\mathring{U}(a)$. Тогда $a - $ УОТ} \Rightarrow f \text{ неогр.} \Rightarrow\]
 \[\Rightarrow \exists z_n \to a : f(z_n) \to \infty\]
 \[2) A \in \mathbb{C}. \text{ Если } \exists z_n \to a: f(z_n) = A, \text{ то победа}\]
 \[\text{Иначе построим } g(z) = \frac{1}{f(z)-A} \in \mathcal{O}(\mathring{U}_{\epsilon'}(a))\]
 \[f(z) = \frac{1}{g(z)} + A.\] 
-\[\text{ Если $a - $ УОТ для $g$, тогда для $f$ это УОТ или полюс - противоречие. Если $a -$ полюс}\]
-\[\text{для $g$, то для $f -$ УОТ} \Rightarrow \text{$a -$ СОТ для $g$} \Rightarrow \exists z_n \to a: g(z_n) \to \infty \Rightarrow f(z_n) \to A \blacktriangleleft\]
+\[\text{ Если $a$ -- УОТ для $g$, тогда для $f$ это УОТ или полюс -- противоречие. Если $a$ -- полюс}\]
+\[\text{для $g$, то для $f$ -- УОТ} \Rightarrow \text{$a$ -- СОТ для $g$} \Rightarrow \exists z_n \to a: g(z_n) \to \infty \Rightarrow f(z_n) \to A \blacktriangleleft\]
 
-\textbfit{Опр.} $\infty$ называется ИОТ для $f(z)$, если $\exists R > 0: f \in \mathcal{O}(|z|> R)$. Классификация та же или же тип особой точки в $\infty -$ это тип особой точки в 0 у $f\left(\frac{1}{z}\right)$.
+\textbfit{Опр.} $\infty$ называется ИОТ для $f(z)$, если $\exists R > 0: f \in \mathcal{O}(|z|> R)$. Классификация та же или же тип особой точки в $\infty$ -- это тип особой точки в 0 у $f\left(\frac{1}{z}\right)$.
 
-\subsection{Связь типа ИОТ в $\infty$ с рядом Лорана в $|z| > R$}
+\textbf{Связь типа ИОТ в $\infty$ с рядом Лорана в $|z| > R$}
 
-1) $\infty -$ УОТ $f(z) = \sum_{n=-\infty}^0 c_n z^n$
+1) $\infty$ -- УОТ $f(z) = \sum_{n=-\infty}^0 c_n z^n$
 
-2) $\infty -$ полюс. $f(z) = \sum_{n=-\infty}^N c_n z^n, N > 0, N -$ порядок полюса, $f(z) = z^N g(z), \ g(z) \neq 0 \in \mathcal{O}(|z|>R)$
+2) $\infty$ -- полюс. $f(z) = \sum_{n=-\infty}^N c_n z^n, N > 0, N$ -- порядок полюса, $f(z) = z^N g(z), \ g(z) \neq 0 \in \mathcal{O}(|z|>R)$
 
-3) $\infty -$ СОТ. В разложении бесконечно много слагаемых с положительными степенями.
+3) $\infty$ -- СОТ. В разложении бесконечно много слагаемых с положительными степенями.
 
-\textbfit{Теорема.} Если $f \in \mathcal{O}(\mathbb{C}), \ \infty -$ УОТ, то $f \equiv const$
-\[\triangleright \text{Т.к. $\infty -$ УОТ, то } \exists R > 0: f(z) \text{ ограничена в } \{|z|>R\}, \text{ а при $|z| \leq R \ f$ ограничена по}\]
+\textbfit{Теорема.} Если $f \in \mathcal{O}(\mathbb{C}), \ \infty$ -- УОТ, то $f \equiv const$
+\[\triangleright \text{Т.к. $\infty$ -- УОТ, то } \exists R > 0: f(z) \text{ ограничена в } \{|z|>R\}, \text{ а при $|z| \leq R \ f$ ограничена по}\]
 \[\text{т. Вейерштрасса} \Rightarrow f \in \mathcal{O}(\mathbb{C}), f \in B(\mathbb{C}) \overset{\text{т. Лиувилля}}{\Rightarrow} f \equiv const \blacktriangleleft\]
 
-\textbfit{Теорема.} Если $f \in \mathcal{O}(\mathbb{C}), \ \infty -$ полюс, то $f -$ многочлен
+\textbfit{Теорема.} Если $f \in \mathcal{O}(\mathbb{C}), \ \infty$ -- полюс, то $f$ -- многочлен.
 \[\triangleright f \in \mathcal{O}(\mathbb{C}) \Rightarrow f(z) = \sum_{n=0}^\infty c_n z^n \forall z \in \mathbb{C}\]
 \[\text{По т. о связи с рядом Лорана } f(z) = \sum_{n=-\infty}^N c_n z^n \Rightarrow f(z) = \sum_{n=0}^N c_n z^n \blacktriangleleft\]
 
-\textbfit{Опр.} $f \in \mathcal{O}(\mathbb{C}), \ \infty -$ СОТ называются трансцендентными.
+\textbfit{Опр.} $f \in \mathcal{O}(\mathbb{C}), \ \infty$ -- СОТ называются трансцендентными.
 
 \textbfit{Теорема} (малая т. Пикара). Пусть $f \in \mathcal{O}(\mathbb{C}), f \neq const$. Тогда $\forall A \in \mathbb{C}$ кроме, быть может, одного $\exists z \in \mathbb{C}: f(z) = A$
-
-\textbfit{Опр.} $f$ называется мероморфной в $D$, если у неё в $D$ нет других особенностей кроме полюсов, т.е. $f \in \mathcal{O}(D \setminus M) \ \forall a \in M, \ a -$ плюс $f$.
+\subsection{Целые и мероморфные функции}
+\textbfit{Опр.} $f$ называется мероморфной в $D$, если у неё в $D$ нет других особенностей кроме полюсов, т.е. $f \in \mathcal{O}(D \setminus M) \ \forall a \in M, \ a$ -- плюс $f$.
 
 \textbfit{Пр.} $\frac{1}{\sin z}$ в $\mathbb{C}$
 
-\textbfit{Теорема.} Пусть $f$ мероморфна в $\mathbb{C}, \ \infty -$ ИОТ в $f$. Если $\infty -$ УОТ или полюс, то $f -$ рациональная.
-\[\triangleright \text{ У $f$ конечно полюсов в } \mathbb{C}, \{a_z, \ldots, a_N\} = M\]
+\textbfit{Теорема.} Пусть $f$ мероморфна в $\mathbb{C}, \ \infty$ -- ИОТ в $f$. Если $\infty$ -- УОТ или полюс, то $f$ -- рациональная.
+\[\triangleright \text{ У $f$ конечно полюсов в } \mathbb{C}, \{a_1, \ldots, a_N\} = M\]
 \[\text{В окрестности }a_k f = \sum_{n=0}^\infty c_{nk}(z-a_k)^n + \sum_{n=-N_k}^{-1} c_{nk}(z-a_k)^n\]
-\[\sum_{n=-N_k}^{-1} c_{nk}(z-a_k)^n = R_k \in \mathcal{O}(\mathbb{C} \setminus \{a_n\})\]
-\[f - R_k(z) \in \mathcal{O}(U_\epsilon(a_n))\]
-\[f-\sum_{k=1}^N R_k \in \mathcal{O}(\mathbb{C}) \text{, в } |z| > R \ f(z) = \sum_{n=-\infty}^1 c_{n0}z^n + \sum_{n=0}^{N_0} c_{n0}z^n, \ \sum_{n=0}^{N_0} c_{n0}z^n = p(z)\]
+\[\sum_{n=-N_k}^{-1} c_{nk}(z-a_k)^n = R_k \in \mathcal{O}(\mathbb{C} \setminus \{a_k\})\]
+\[f - R_k(z) \in \mathcal{O}(U_\epsilon(a_k))\]
+\[f-\sum_{k=1}^N R_k \in \mathcal{O}(\mathbb{C}) \text{, в } |z| > R \ f(z) = \sum_{n=-\infty}^{-1} c_{n0}z^n + \sum_{n=0}^{N_0} c_{n0}z^n, \ \sum_{n=0}^{N_0} c_{n0}z^n = p(z)\]
 \[f - \sum_{k=1}^N R_k - p(z) \in \mathcal{O}(\mathbb{C}), \ \infty -\text{ УОТ} \Rightarrow f - \sum_{k=1}^N R_k - p(z) \equiv const \Rightarrow\]
 \[f = c + p(z) + \sum_{k=1}^N \sum_{n=1}^{N_k} \frac{c_{nk}}{(z-a_k)^n} \blacktriangleleft\]
 
-\textbfit{Теорема} (Большая теорема Пикара). Пусть $a-$ СОТ $f$. Тогда $\forall A \in \mathbb{C}$ кроме, быть может, одного $\exists z_n \to a: f(z_n) = A$
+\textbfit{Теорема} (Большая теорема Пикара). Пусть $a$ -- СОТ $f$. Тогда $\forall A \in \mathbb{C}$ кроме, быть может, одного $\exists z_n \to a: f(z_n) = A$

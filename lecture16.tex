@@ -1,8 +1,8 @@
 \section{Лекция 16. Теорема Руше. Геометрические принципы}
-
-\textbfit{Теорема} (Руше/ <<Дамы с собычкой>>). Пусть $g, \ f \in \mathcal{O}(D), \ \overline{G}$ -- ограниченная, $\overline{G} \subset D, \ \partial G$ состоит из одной кусочно-гладкой замкнутой жордановой кривой.
+\subsection{Теорема Руше}
+\textbfit{Теорема} (Руше/ <<Дамы с собачкой>>). Пусть $g, \ f \in \mathcal{O}(D), \ G$ -- ограниченная, $\overline{G} \subset D, \ \partial G$ состоит из одной кусочно-гладкой замкнутой жордановой кривой.
 Пусть $|f|>|g|$ на $\partial G$. Тогда $N(f+g, G) = N(f, G)$.
-\[\triangleright \ N(f+g, G) = \frac{1}{2\pi} \Delta_{\partial G} \arg (f+h)\]
+\[\triangleright \ N(f+g, G) = \frac{1}{2\pi} \Delta_{\partial G} \arg (f+g)\]
 \[N(f, G) = \frac{1}{2\pi} \Delta_{\partial G} \arg f\]
 \[\arg (f+g)(z) = \arg f(z) \cdot \left(1+\frac{g}{f}\right)= \arg f(z) + \arg \left(1+\frac{g}{f}\right) + 2\pi k\]
 \[\Delta_{\partial G} \arg (f+g) = \Delta_{\partial G} \arg f + \Delta_{\partial G} \arg \left(1+\frac{g}{f}\right) = N(f, G) \cdot 2\pi + \Delta_{\partial G} \arg \left(1+\frac{g}{f}\right)\]
@@ -14,7 +14,7 @@
 \[|g(z)|  \leq n \max_{i=1\ldots n} |a_i| \cdot |z|^{n-1}, \ M = n \max_{i=1\ldots n} |a_i|\]
 \[\text{При } R > M \ |f(z)| = |a_0 z^n| > |a_0| \cdot \frac{M}{|a_0|} \cdot |z|^{n-1}, \ \text{т.е. на } |z| = R \ |g| < |f| \Rightarrow\] 
 \[\Rightarrow N(P_n(z), |z| < R) = n. \ \blacktriangleleft\]
-
+\subsection{Геометрические принципы}
 \textbfit{Теорема} (принцип сохранения области). Пусть $f \in \mathcal{O}(D), \ f \neq const$ в $D, \ D^* = f(D)$. Тогда $D^*$ -- область.
 \[\triangleright \text{ 1) Связность. Пусть } A=f(a), \ B = f(b), \ a, b \in D. \text{Т.к. } D \text{ связна } \Rightarrow \exists \text{ пусть } \Gamma:[0, 1] \to D:\]
 \[\Gamma(0)=a, \ \Gamma(1) = b.\] 
@@ -28,11 +28,11 @@
 \[\text{На } |z-z_0| = \delta, \ |f(z) - w_0| \geq r^* > |w_0-w_1|, \text{ т.е. } N(f(z)-w_1, |z-z_0|<\delta) =\] 
 \[=N(f(z) - w_0, |z-z_0|<\delta) \geq 1 \Rightarrow w_1 \in D^* \ \blacktriangleleft\]
 
-\textbfit{Теорема} (критерий локальной однолистности). Пусть $f \in \mathcal{O}(a).$ Тогда $f$ лкально однолистна в $a$ (т.е. $\exists U_\delta(a)$, в которой $f$ -- инъекция) $\Leftrightarrow f'(a) \neq 0.$
+\textbfit{Теорема} (критерий локальной однолистности). Пусть $f \in \mathcal{O}(a).$ Тогда $f$ локально однолистна в $a$ (т.е. $\exists U_\delta(a)$, в которой $f$ -- инъекция) $\Leftrightarrow f'(a) \neq 0.$
 \[\triangleright \ (\Leftarrow) \text{ уже доказывали (т. об обратном отображении + Коши-Римана)}\]
 \[(\Rightarrow) \text{ Пусть $f$ -- инъекция в } U(a), \ f'(a) = 0\]
 \[f(a) = w_0. \ f(z) - w_0 \text{ имеет в $a$ 0 порядка $p \geq 2$.}\]
-\[\text{По т. о ! можем выбрать } U_\epsilon(a): \ f'(z) \neq 0 \text{ в } \mathring{U}_\epsilon(a), \ f(z0 \neq w_0).\]
+\[\text{По т. о ! можем выбрать } U_\epsilon(a): \ f'(z) \neq 0 \text{ в } \mathring{U}_\epsilon(a), \ f(z) \neq w_0.\]
 \[\text{Рассмотрим } U_\delta(w_0) \subset D^* = f(U_\epsilon(a)), \text{ возьмём } w_1 \in U_\delta(w_0).\]
 \[r^* := \min_{|z-a|=\epsilon} |f(z) - w_0|, \ \text{пусть } w_1 \in U_\delta(w_0) : \ |w_1-w_0|<r^*.\]
 \[\text{Тогда } f(z) - w_1 = f(z) - w_0 + w_0 - w_1\]
